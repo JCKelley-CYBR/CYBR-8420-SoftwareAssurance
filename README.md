@@ -9,4 +9,10 @@
 - Neil Koul - 
 - Daniel Wang - 
 
-Project Selection: [KeepassXC]()
+Project Selection: [KeepassXC](https://github.com/keepassxreboot/keepassxc)
+
+## Table of Contents:
+
+1. [Project Proposal](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/ProjectProposal.md)
+
+## Other Recources and Related Links:
