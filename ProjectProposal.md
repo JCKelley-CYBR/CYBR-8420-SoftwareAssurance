@@ -7,6 +7,7 @@
 ## Hypothetical Operation Environment
 
 ## System Engineering Diagram
+<img src="system_engineering_diagram.png">
 
 ## Perceived Threats
 
