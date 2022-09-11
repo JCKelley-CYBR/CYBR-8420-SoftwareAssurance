@@ -30,7 +30,11 @@ The KeePassXC repository contains extensive documentation on the application, wh
 
 ## Security Related History
 
+There have not been any publically-disclosed CVE's for KeePassXC. KeePassXC is a fork of the now-deprecated KeePassX, which has been around for a while, and is well regarded. Our team was able to locate one previous security related issue in the KeePassXC issues page. This vulnerability was discovered and patched by the lead KeePassXC developer, who wrote:
 
+> Given that this bug is present means apparently that nobody ever tested the keepassxc code with address sanitizer. I'd consider that very basic quality assurance that especially security-related projects should do by default.
+
+The previous versions of KeePass have been relatively free of vulnerabilities as well. The most major vulnerability our team could find was on KeePass (not X or XC), titled [CVE-2022-0725](https://www.cvedetails.com/cve/CVE-2022-0725), which allowed an attacker to log a KeePass password in plain text. This vulnerability was rated as a 5.0/10 severity. A PoC can be found [here](https://github.com/ByteHackr/keepass_poc).
 
 ## Repo Link
 https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance
