@@ -9,7 +9,7 @@
 - Neil Koul - Reviewer
 - Daniel Wang - Writing/Documenting
 
-Project Selection: [KeepassXC](https://github.com/keepassxreboot/keepassxc)
+Project Selection: [KeePassXC](https://github.com/keepassxreboot/keepassxc)
 
 ## Table of Contents:
 
