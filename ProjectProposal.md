@@ -2,7 +2,7 @@
 
 # Team Let Me Make Sure Nobody is Breaking into My House Real Fast, One Sec
 
-## Open-Source Project: KeyPass 
+## Open-Source Project: KeyPassXC 
 
 ## Hypothetical Operation Environment
 KeepassXC provides a highly flexible password management solution for individuals and organizations. KeyPassXC allows local, network, and cloud storage of encrypted password databases and database shares. The software is expected in any environment to provide adequate encryption to maintain the confidentiality of the database contents, proper password maintenance ensuring password integrity, and ease of access for authorized individuals to ensure high availability.
