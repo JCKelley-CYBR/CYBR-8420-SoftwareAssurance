@@ -13,11 +13,11 @@ Our hypothetical situation focuses on a Regional Managed Service Provider (MSP) 
 <img src="system_engineering_diagram.png">
 
 ## Perceived Threats
-In our selected environment of a Regional Managed Service Provider in which hundreds of environments' credentials are stored in a password manager such as KeyPass, there are many potential threats to the clientele's systems and their clients if the credentials are not correctly stored. In order to properly perform our assessment of this software for the hypothetical environment, these threats must be considered and acknowledged. Below is a list of perceived threats to the environment. Our team will assume all have malicious intent or purpose:h
-* Hacker: A bad actor would try and gain access to the password database to obtain system credentials. Their motivation would be reputation or financial depending on their end goals and actions. Their targets would likely be easily accessible.
-* Employee: A bad actor could try and exfiltrate passwords to sell to hackers or other interested parties. Their motivation would be financial or revenge. Their target would be their employer.
-* Contributor: A bad actor may make a contribution to the open source project that would allow them access to the database of our environment. Their motivation would be reputation or financial depending on their end goal. This actor could also leverage greater threats. This is a particularly emphasized problem due to there being no security policy on GitHub. Their target would be the source of the software.
-* 
+In our selected environment of a Regional Managed Service Provider in which hundreds of environments' credentials are stored in a password manager such as KeyPass, there are many potential threats to the clientele's systems and their clients if the credentials are not correctly stored. In order to properly perform our assessment of this software for the hypothetical environment, these threats must be considered and acknowledged. Below is a list of perceived threats to the environment. Our team will assume all have malicious intent or purpose:
+* Black Hat Hacker: A bad actor would try and gain access to the password database to obtain system credentials. Their motivation would be reputation or financial depending on their end goals and actions. Their targets would likely be easily accessible.
+* Insider Threat (Employee): A bad actor could try and exfiltrate passwords to sell to hackers or other potential threat actors. Their motivation would be financial or revenge. Their target would be their employer.
+* Malicious Contributor: A bad actor may make a contribution to the open source project that would allow them access to the database of our environment. Their motivation would be reputation or financial depending on their end goal. This actor could also leverage greater threats. This is a particularly emphasized problem due to there being no security policy on GitHub. Their target would be the source of the software.
+
 ## Security Features
 * Separate storage for TOTP secrets as passwords
 * Option to compile without networking
@@ -26,7 +26,7 @@ In our selected environment of a Regional Managed Service Provider in which hund
 * AES 256 encryption standard with TwoFish and ChaCha20 as additional choices
 * Database health reports (Password strength, Have I been Pwnd checks, statistics)
 * Secure password generation
-* 
+
 ## Team Motivation
 The interconnectivity of the mobile device provided fertile grounds for the Service-as-a-Product business model to grow unchecked, and in the last five years, Software-as-a-Service, e.g., Adobe Cloud, Office 365, etc., has also seen an increase in popularity. For the individual, we now have more accounts over a more extensive variety of applications and services than ever before, a trend that is unlikely to slow down. Consequentially, password managers have seen a similar growth in popularity. This growth is not only in the enterprise environment but also in personal use. These password managers provide convenience in exchange for a single potential point of failure. 
 
