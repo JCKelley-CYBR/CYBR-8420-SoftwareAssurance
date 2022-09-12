@@ -4,10 +4,10 @@
 
 ## Team Members: (Name - Role)
 - Joshua Kelley - Team Lead
-- Aaron Vigal - 
-- Mitchell White - 
-- Neil Koul - 
-- Daniel Wang - 
+- Aaron Vigal - Technical
+- Mitchell White - Administrative/Project Management
+- Neil Koul - Reviewer
+- Daniel Wang - Writing/Documenting
 
 Project Selection: [KeepassXC](https://github.com/keepassxreboot/keepassxc)
 

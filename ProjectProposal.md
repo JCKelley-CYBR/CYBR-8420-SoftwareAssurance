@@ -60,3 +60,8 @@ The previous versions of KeePass have been relatively free of vulnerabilities as
 https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance
 
 ## Team Reflection
+Josh led the team this week and ensured all tasks were completed. The team worked well as a team and all assigned tasks were completed to the team's high standards. The team implemented threading in our project by assigning tasks to each other and working in parallel. The team followed an agile project management style. Josh worked on the hypothetical operating environment (HOE) and the licensing. Mitchell worked on percieved threats (PT) based off of the HOE. Aaron worked on project description and the security history. Daniel worked on the team motivation and contributing documentation. Neil worked on creating the system engineering diagram (SED). 
+
+Our team is being greatly led by Josh. The team is light on their feet-willing to change to whatever is required of the project. The team is always up to providing constructive criticisim while maintaing a clear path forward. No issues arose this week, the team meshed well together and accomplished the task at hand. 
+
+> ### This is a __jovial__ team environment.
