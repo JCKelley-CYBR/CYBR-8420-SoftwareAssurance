@@ -34,4 +34,4 @@ The findings related to each use case identified above are shown in order below.
 ## Reflection
 
 ## Teamwork
-To view our project board, visit the Security Requirements Project board here.
+To view our project board, visit the Security Requirements Project board [here](https://github.com/users/JCKelley-CYBR/projects/2).
