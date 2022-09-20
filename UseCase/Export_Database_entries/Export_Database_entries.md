@@ -8,15 +8,20 @@ I. Security requirements deemed necessary through the use/misuse case diagrammin
 * *Credential Hashing* - The credentials needed to decrypt the database should be hashed and never stored in plain text in order to ensure no possible leak of credentials occurs.
 * *Strong Cryptographic Standards* - Strong cryptographic standards should be used in order to prevent breaking of the hashed credentials as well as breaking of the database in general.
 * *Use Yubikey or Key File "MFA"* - The password to the database does not technically constitute authentication, therefore a Yubikey or Key File would not be a "second authentication factor", however, a second form of challenge to decrypt the database would help ensure security.   
-* *Blank Password* - Blank the password so that a basic shoulder surfing attempt could be thwarted.
+* *Blanks Password* - Blank the password so that a basic shoulder surfing attempt could be thwarted.
 * *Use Windows Hello Authentication* - Windows hello authentication would increase security in this instance since the database is stored locally.
 
 II. Security features included within KeePassXC in regards to prior requirements:
-* *Feat* - blah
+* *Blanks Password* - The application does blank the password.
+* *[Yubikey or Key File](https://keepassxc.org/project/)* - Application allows usage of a Yubikey or Key File that provides an additional challenge before decryption.
+* *[Strong Cryptographic Standards](https://keepassxc.org/docs/KeePassXC_UserGuide.html#_database_settings)* - The application uses 256 bit AES encryption with the option of using ChaCha20 or Twofish.
+* *[Windows Hello](https://keepassxc.org/docs/KeePassXC_GettingStarted.html#_quick_unlock)* - The application uses Windows Hello authentication as a way to unlock the database as an additional challenge, or can be configured for a quick unlock.
 
 III. Observations:
 
-The
+KeePassXC does a good job of performing security on the database export function. The encryption is of quality standard, the ability to use a "MFA" key thwarts many attack vectors, and the use of Windows Hello provides an additional layer of security before the database can be exported. However, a nice option to have for the export would be to export it encrypted. This is not a major issue as the database remains local the entire time. If it were to travel through the internet, this would be a requirement. Since it remains local, the scope starts to fall into environment as to whether it should be a requirement or not. 
+
+Additionally, when performing tests on the application, we discovered a bypass to the Windows Hello authentication, which means that it is present but needs to be fixed before it is effective. 
 
 ### Diagram: 
 ![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/ExportDB-Shmuel90/UseCase/Export_Database_entries/Export%20Vault%20Use%20Case.jpg)
