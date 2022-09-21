@@ -1,8 +1,8 @@
 ## Use Case: Export KeePass Database
 
-
 ### Description:
-Each user of the KeePassXC application will create and maintain their own KDBX style database in which the user's usernames, passwords, associated URLs, and associated notes will be stored. In order to export this database, KeePassXC has built in functionality to do so in teh CSV or HTML formats. The security functionality of this of this operation will be determined by analyzing the  security requirements needed to maintain a secure environment. 
+Each user of the KeePassXC application will create and maintain their own KDBX style database in which the user's usernames, passwords, associated URLs, and associated notes will be stored. In order to export this database, KeePassXC has built in functionality to do so in CSV or HTML formats. The security functionality of this operation will be determined by analyzing the security requirements needed to maintain a secure environment. 
+
 ### Alignment Analysis:
 I. Security requirements deemed necessary through the use/misuse case diagramming process are as follows:
 * *Credential Hashing* - The credentials needed to decrypt the database should be hashed and never stored in plain text in order to ensure no possible leak of credentials occurs.
