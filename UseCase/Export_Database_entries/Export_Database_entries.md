@@ -24,4 +24,4 @@ KeePassXC does a good job of performing security on the database export function
 Additionally, when performing tests on the application, we discovered a bypass to the Windows Hello authentication, which means that it is present but needs to be fixed before it is effective. 
 
 ### Diagram: 
-![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/ExportDB-Shmuel90/UseCase/Export_Database_entries/Export%20Vault%20Use%20Case.jpg)
+<img src="Export Vault Use Case.jpg">
