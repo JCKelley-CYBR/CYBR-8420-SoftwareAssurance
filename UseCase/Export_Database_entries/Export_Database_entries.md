@@ -1,15 +1,16 @@
 ## Use Case: Export KeePass Database
 
 ### Description:
-Each user of the KeePassXC application will create and maintain their own KDBX style database in which the user's usernames, passwords, associated URLs, and associated notes will be stored. In order to export this database, KeePassXC has built in functionality to do so in CSV or HTML formats. The security functionality of this operation will be determined by analyzing the security requirements needed to maintain a secure environment. 
+Each user of the application will need to create and maintain a password vault. This vault will need to be able to be exported for uses of transferring the vault or for backup and storage.  
 
 ### Alignment Analysis:
 I. Security requirements deemed necessary through the use/misuse case diagramming process are as follows:
 * *Credential Hashing* - The credentials needed to decrypt the database should be hashed and never stored in plain text in order to ensure no possible leak of credentials occurs.
 * *Strong Cryptographic Standards* - Strong cryptographic standards should be used in order to prevent breaking of the hashed credentials as well as breaking of the database in general.
-* *Use Yubikey or Key File "MFA"* - The password to the database does not technically constitute authentication, therefore a Yubikey or Key File would not be a "second authentication factor", however, a second form of challenge to decrypt the database would help ensure security.   
+* *Use MFA Physical Token* - A second form of physical challenge to decrypt the database would help ensure security even against social engineering attacks.   
 * *Blanks Password* - Blank the password so that a basic shoulder surfing attempt could be thwarted.
 * *Use Windows Hello Authentication* - Windows hello authentication would increase security in this instance since the database is stored locally.
+* *Encrypt Vault* - An encrypted vault would be the most secure way to store it after exporting.
 
 II. Security features included within KeePassXC in regards to prior requirements:
 * *Blanks Password* - The application does blank the password.
@@ -24,4 +25,4 @@ KeePassXC does a good job of performing security on the database export function
 Additionally, when performing tests on the application, we discovered a bypass to the Windows Hello authentication, which means that it is present but needs to be fixed before it is effective. 
 
 ### Diagram: 
-<img src="Export Vault Use Case.jpg">
+<img src="Export Vault Use CaseV3.jpg">
