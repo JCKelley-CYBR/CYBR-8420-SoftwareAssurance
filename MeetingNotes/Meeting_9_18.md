@@ -1,53 +1,47 @@
 
 # Meeting for 9/18/22 
 All members present
-## Discussions of Part 1, Identify five essential interactions, meeting performed via discord
-an exanimation of the features avaliable in KeePassXC
+## Discussions of Part 1, Identify five essential interactions of the application, meeting performed via discord
+Group examined and listed the features available in KeePassXC for security evaluation and possible security issues with each. 
 
-- export vault
-- unlocking database
-- KeeShare
-- haveIBeenPwned reaching out to the internet (spoof DNS and intercept traffic)
-- password generator
-- autotype 
+Selected features for further evaluation in assignment/misuse case diagrams are as listed below:
 
-- Export Group's/database entries
-- KeeShare
-- Use Password Generator
+- Export Database(individual entries, Groups or entire Vault)
 - Unlocking Database/DatabaseShare
-- haveIbeenpwned
+- KeeShare
+- haveIBeenPwned
+- Usage of Password Generator
+- Autotype 
 
-decision to drop one of the six features listed here
+Discussions to pare the list down to five entries.
 
-discussion on autotype vs password generator vs export groups vs KeeShare and their critialitiy to the function of KeePassXC's 
-password genertor is major in making complex passwords
-autotype as a nice to have feature and critical 
+Discussion regarding Autotype vs Password Generator vs Export Database vs KeeShare and their criticality to the function of KeePassXC within an organization.
 
-discussion of usecase/diagraming of password generator 
--passphrases are user supplied and opens up to dictionary attach
-password generation/ import custom wordlist database
-discussion of weakness of the passwords
+Password generator is allows user to quickly create complex passwords for usage.
 
-a review of the hypothetical operating enviroment to determine which features are more essential
+Autotype is a convenience feature but greatly affects the average user's usage of KeePassXC, and is therefore considered a critical feature.
 
-keeshare needs to stay
+Discussion of usecase/misusecase diagraming of the password generator 
+- passphrases are user supplied and opens up all entries in the KeePassXC vault to dictionary attacks.
+- password generation allows the import of a custom wordlist database which may create weak passwords.
 
-josh argues for the retain of autotype due to the usage
+The group reviews the hypothetical operating environment to determine which features should be prioritized.
 
-neil for the maintain of password export
+- KeeShare is critical as a part of organizational usage
+- Josh argues for the retention of autotype due to the common usage by average users within organization.
+- Neil argues for keeping password export for backup and transfer purposes
+- databaseshare unlocking and keysharing are determined to be critical.
+- Password generation is to be dropped as the least important feature for software system security requirements evaluation(would be evaluation as organizational policy)
 
-databaseshare unlocking - keyshare sharing 
+Final decision for splitting up the security requirements as via lots decided when Josh initially set up issues.
+Neil - unlocking database
+Aaron - haveIbeenpwned
+Daniel - keeshare
+Mitchell - export groups
+Josh - autotype
 
-final decision for splitting up the security requirements as via lots decided when josh initially set up issues. neil was given first pick due to him being given an assignment for missing the previous meeting
+All members will aim to draft their portions of the assignment before the instructor meeting on Wednesday, all work will be kept on individual branches for review prior to merging into main, this includes finding summary, oss doc review, relevant usecases. We will  reconvene post instructor meeting on Wednesday to complete part 2 of assignment.
 
-neil - unlocking database
-aaron - haveIbeenpwned
-daniel - keeshare
-mitch - export groups
-josh - autotype
+Josh created all framework material, issues and folders in git repo.
 
-all parts will aim to be drafted by wedensday, finding summary, oss doc review, fillout relevant usecase, everyone's work will be kept in their own branchs, awaiting review on wedensday and reconviene to complete part 2 of assignment
-
-john created all framwork material, folders, etc.
-
-conclusion of meeting 
+### conclusion of meeting. 
