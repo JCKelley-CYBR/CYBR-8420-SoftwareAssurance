@@ -23,4 +23,4 @@ KeePassXC must provide each user with the ability to use credentials stored with
         * Due to the lack of encryption on the autotype feature, it also lacks strong encryption on this functionality, such as RSA 2048-bit.
 
 ## Diagram
-<img src="AutoType-UseCase.png">
+<img src="AutoType-UseCaseV2.png">
