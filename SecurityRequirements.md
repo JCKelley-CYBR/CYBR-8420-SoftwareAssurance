@@ -13,11 +13,11 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 ## Findings Summary
 ### 1 - Introduction
 In order to increase the security of user systems, client systems, and application credentials, KeePassXC must provide a certain level of security that can be defined through careful analysis of the essential interactions carried out with KeePassXC. Through careful analysis and understanding these requirements can be objectified, and through improper understanding of these interactions small security flaws can result in significant impacts to the business. To best analyze the KeePass XC we have identified the five most essential interactions between our technicians and the application. The following five essential interactions were identified for the development of security requirements:
-  1. Using Credentials
-  2. Sharing Credentials
-  3. Generating Credentials
-  4. Authenticating to the Vault/Application
-  5. Exporting Credential Vaults
+  i. Using Credentials
+  ii. Sharing Credentials
+  iii. Generating Credentials
+  iv. Authenticating to the Vault/Application
+  v. Exporting Credential Vaults
 ### 2 - Commonalities
 
 ### 3 - Use Case Summaries
