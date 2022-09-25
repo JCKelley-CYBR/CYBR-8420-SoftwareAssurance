@@ -1,4 +1,4 @@
-## Use Case: Export KeePass Database
+## Use Case: Export Vault
 
 ### Description:
 Each user of the application will need to create and maintain a password vault. This vault will need to be able to be exported for uses of transferring the vault or for backup and storage.  
