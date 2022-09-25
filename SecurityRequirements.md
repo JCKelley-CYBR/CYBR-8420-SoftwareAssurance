@@ -5,7 +5,7 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 
 ## Essential Interactions, Diagrams, and Alignment Analysis
 - Use Case 1: [Autotype](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Autotype.md)
-- Use Case 2: [Export Database Entries](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Export_Vault/readme.md)
+- Use Case 2: [Export Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Export_Vault/readme.md)
 - Use Case 3: [HaveIBeenPwned](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/HaveIBeenPwned.md)
 - Use Case 4: [KeeShare](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/KeeShare.md)
 - Use Case 5: [Unlocking Database](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Unlocking_DB.md)
