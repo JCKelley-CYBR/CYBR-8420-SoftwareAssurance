@@ -4,11 +4,11 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 # Team Let Me Make Sure Nobody is Breaking into My House Real Fast, One Sec
 
 ## Essential Interactions, Diagrams, and Alignment Analysis
-- Use Case 1: [Autotype](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Autotype.md)
-- Use Case 2: [Export Database Entries](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Export_Database_entries.md)
-- Use Case 3: [HaveIBeenPwned](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/HaveIBeenPwned.md)
-- Use Case 4: [KeeShare](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/KeeShare.md)
-- Use Case 5: [Unlocking Database](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Unlocking_DB.md)
+- Use Case 1: [Use Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Autotype.md)
+- Use Case 2: [Share Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Export_Database_entries.md)
+- Use Case 3: [Generate Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/HaveIBeenPwned.md)
+- Use Case 4: [Authenticate to Vault/Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/KeeShare.md)
+- Use Case 5: [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Unlocking_DB.md)
 
 ## Findings Summary
 ### 1 - Introduction
