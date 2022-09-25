@@ -28,7 +28,7 @@ The required security components associated with actively using credentials in K
   1. Clearing Clipboard contents after use
   2. Requiring user interaction before auto-filling form fields
   3. Using keystroke encryption to prevent keyloggers from stealing plaintext input from AutoType
-    * Utilizing robust encryption algorithms to *mitigate* the risk of exploitation of keystroke encryption. 
+* Utilizing robust encryption algorithms to *mitigate* the risk of exploitation of keystroke encryption. 
 
 KeePassXC currently provides the following features that directly reference the above security components: (1) Clearing the clipboard after 10 seconds and (2) requiring the user to interact with browser forms to autofill credentials.
 
