@@ -5,7 +5,7 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 
 ## Essential Interactions, Diagrams, and Alignment Analysis
 - Use Case 1: [Use Credentials](UPDATE ME)
-- Use Case 2: [Sharing Credentials](./CYBR-8420-SoftwareAssurance/UseCase/SharingCredentials/readme.md)
+- Use Case 2: [Sharing Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/SharingCredentials)
 - Use Case 3: [Generate Credentials](UPDATE ME)
 - Use Case 4: [Authenticate to Vault/Application](UPDATE ME)
 - Use Case 5: [Export Credential Vault](UPDATE ME)
@@ -36,7 +36,7 @@ Through careful evaluation, we have determined that KeePassXC adequately satisfi
 
 The only major weakness we could identify in KeePassXC's use of credentials lies within the autotype feature. If a malicious actor, such as a corporate competitor or black hat hacker, manages to install a keylogger onto our system, the autotype feature exposes the plaintext password. This weakness can expose our systems and client systems to further exploitation.
 
-#### 3.2 - [Sharing Credentials](./CYBR-8420-SoftwareAssurance/UseCase/SharingCredentials/readme.md)
+#### 3.2 - [Sharing Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/SharingCredentials)
 The required security components associated organizational sharing of credentials with KeePassXC include:
   1. KeePassXC should not allow unauthorized access to shared credentials by members of the organization.
   2. KeePassXC should not allow unauthorized or accidental modification of shared credentials by members of the organization.
