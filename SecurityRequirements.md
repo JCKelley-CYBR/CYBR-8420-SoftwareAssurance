@@ -19,7 +19,9 @@ In order to increase the security of user systems, client systems, and applicati
   4. Authenticating to the Vault/Application
   5. Exporting Credential Vaults
 ### 2 - Commonalities
-Through careful analysis of the above essential interactions, we were able to identify several commonalities between the essential interactions that are important security requirements within KeePassXC. These commonalities include: unlocking database, sharing database, displaying password to user, password strength. The mitigation techniques and prevention methods for these commonalities include: using strong encrypion, using computationally difficult hashing, using the password generator, and ensuring passwords are salted.
+Through careful analysis of the above essential interactions, we were able to identify several commonalities between the essential interactions that are important security requirements within KeePassXC. 
+* These commonalities include: unlocking database, sharing database, displaying password to user, password strength. 
+* The mitigation techniques and prevention methods for these commonalities include: using strong encrypion, using computationally difficult hashing, using the password generator, and ensuring passwords are salted.
 
 ### 3 - Use Case Summaries
 The findings related to each use case identified above are shown below.
