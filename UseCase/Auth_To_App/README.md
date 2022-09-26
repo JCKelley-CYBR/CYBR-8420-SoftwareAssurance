@@ -13,7 +13,7 @@ KeePassXC is based around an encrypte database file with a master password selec
 * Password Salting: Ensures the security of the database and mitigates threats from rainbow tables.
 2. Below are the security features implement
 * Argon2 Key derivation for password hashing
-* HMAC-SHA-256 for header data authentication
-* Hardware call-response challenge
+* HMAC-SHA-256 for header data [authentication](https://keepassxc.org/docs/KeePassXC_UserGuide.html#_database_operations)
+* Hardware call-response [challenge](https://keepassxc.org/docs/KeePassXC_UserGuide.html#_database_operations)
 
-<img src="Authenticate_To_Application_Misuse_Case_diagram.jpg">
+<img src="Authenticate_To_Application_Misuse_Case_diagramV2.jpg">
