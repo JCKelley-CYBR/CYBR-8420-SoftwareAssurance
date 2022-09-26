@@ -4,11 +4,11 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 # Team Let Me Make Sure Nobody is Breaking into My House Real Fast, One Sec
 
 ## Essential Interactions, Diagrams, and Alignment Analysis
-- Use Case 1: [Use Credentials](UPDATE ME)
+- Use Case 1: [Use Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Credentials)
 - Use Case 2: [Sharing Credentials](UPDATE ME)
 - Use Case 3: [Generate Credentials](UPDATE ME)
 - Use Case 4: [Authenticate to Vault/Application](UPDATE ME)
-- Use Case 5: [Export Credential Vault](UPDATE ME)
+- Use Case 5: [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 
 ## Findings Summary
 ### 1 - Introduction
@@ -23,7 +23,7 @@ Through careful analysis of the above essential interactions, we were able to id
 ### 3 - Use Case Summaries
 The findings related to each use case identified above are shown in order below.
 
-#### 3.1 - [Use Credentials](UPDATE ME)
+#### 3.1 - [Use Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Credentials)
 The required security components associated with actively using credentials in KeePassXC include:
   1. Clearing Clipboard contents after use
   2. Requiring user interaction before auto-filling form fields
@@ -42,7 +42,7 @@ The only major weakness we could identify in KeePassXC's use of credentials lies
 
 #### 3.4 - [Authenticate to Vault/Application](UPDATE ME)
 
-#### 3.5 - [Export Credential Vault](UPDATE ME)
+#### 3.5 - [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 The required security components associated with exporting the vault in KeePassXC include: 
 1. Using credential hashing 
 2. Use strong cryptographic standards
