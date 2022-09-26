@@ -12,4 +12,4 @@ III. Observations:
 
 
 ## Diagram:
-<img src="Generate-Password.jpg" alt="Password Generation Diagram" />
+<img src="Generate-PasswordV2.jpg" alt="Password Generation Diagram" />
