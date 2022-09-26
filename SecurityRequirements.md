@@ -84,7 +84,12 @@ We have discovered that 4. Use Windows Hello for additional authentication is pr
 ## OSS Project Documentation Review
 
 ## Reflection
+Josh led the team again this week and ensured all tasks were completed on time and with high quality. The team worked well together, and all assigned tasks were completed to the team's high standards. Josh worked on the "credential usage" use case. Mitchell worked on the "export credential vault" use case. Aaron worked on the "password generation" use case. Daniel worked on the "password sharing" use case. Neil worked on the "application authentication" use case. 
 
-## Teamwork
+Our team is being "mid"ly led by Josh. The team is light on their feet-willing to change to whatever is required of the project. The team is always up to providing constructive criticisim while maintaing a clear path forward. No issues arose this week, the team meshed well together and accomplished the task at hand. 
+
+> ### This is a __jovial__ team environment.
+
+## Project Board
 To view our project board, visit the Security Requirements Project board [here](https://github.com/users/JCKelley-CYBR/projects/2).
 
