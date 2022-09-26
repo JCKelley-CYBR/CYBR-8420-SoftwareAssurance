@@ -4,29 +4,45 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 # Team Let Me Make Sure Nobody is Breaking into My House Real Fast, One Sec
 
 ## Essential Interactions, Diagrams, and Alignment Analysis
-- Use Case 1: [Autotype](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Autotype.md)
-- Use Case 2: [Export Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Export_Vault/readme.md)
-- Use Case 3: [HaveIBeenPwned](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/HaveIBeenPwned.md)
-- Use Case 4: [KeeShare](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/KeeShare.md)
-- Use Case 5: [Unlocking Database](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Unlocking_DB.md)
+- Use Case 1: [Use Credentials](UPDATE ME)
+- Use Case 2: [Sharing Credentials](UPDATE ME)
+- Use Case 3: [Generate Credentials](UPDATE ME)
+- Use Case 4: [Authenticate to Vault/Application](UPDATE ME)
+- Use Case 5: [Export Credential Vault](UPDATE ME)
 
 ## Findings Summary
 ### 1 - Introduction
-
+In order to increase the security of user systems, client systems, and application credentials, KeePassXC must provide a certain level of security that can be defined through careful analysis of the essential interactions carried out with KeePassXC. Through careful analysis and understanding these requirements can be objectified, and through improper understanding of these interactions small security flaws can result in significant impacts to the business. To best analyze the KeePass XC we have identified the five most essential interactions between our technicians and the application. The following five essential interactions were identified for the development of security requirements:
+  1. Using Credentials
+  2. Sharing Credentials
+  3. Generating Credentials
+  4. Authenticating to the Vault/Application
+  5. Exporting Credential Vaults
 ### 2 - Commonalities
-
+Through careful analysis of the above essential interactions, we were able to identify several commonalities between the essential interactions that are important security requirements within KeePassXC. These commonalities include: The mitigation techniques and prevention methods for these commonalities include:
 ### 3 - Use Case Summaries
 The findings related to each use case identified above are shown in order below.
 
-#### 3.1 - 
+#### 3.1 - [Use Credentials](UPDATE ME)
+The required security components associated with actively using credentials in KeePassXC include:
+  1. Clearing Clipboard contents after use
+  2. Requiring user interaction before auto-filling form fields
+  3. Using keystroke encryption to prevent keyloggers from stealing plaintext input from AutoType
+* Utilizing robust encryption algorithms to *mitigate* the risk of exploitation of keystroke encryption. 
 
-#### 3.2 - 
+KeePassXC currently provides the following features that directly reference the above security components: (1) Clearing the clipboard after 10 seconds and (2) requiring the user to interact with browser forms to autofill credentials.
 
-#### 3.3 - 
+Through careful evaluation, we have determined that KeePassXC adequately satisfied the requirements for (1) clearing the clipboard after using credentials and (2) requiring user interaction before auto-filling browser forms.
 
-#### 3.4 - 
+The only major weakness we could identify in KeePassXC's use of credentials lies within the autotype feature. If a malicious actor, such as a corporate competitor or black hat hacker, manages to install a keylogger onto our system, the autotype feature exposes the plaintext password. This weakness can expose our systems and client systems to further exploitation.
 
-#### 3.5 - 
+#### 3.2 - [Sharing Credentials](UPDATE ME)
+
+#### 3.3 - [Generate Credentials](UPDATE ME)
+
+#### 3.4 - [Authenticate to Vault/Application](UPDATE ME)
+
+#### 3.5 - [Export Credential Vault](UPDATE ME)
 The required security components associated with exporting the vault in KeePassXC include: 
 1. Using credential hashing 
 2. Use strong cryptographic standards
