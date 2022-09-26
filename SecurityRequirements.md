@@ -7,7 +7,7 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 - Use Case 1: [Use Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Credentials)
 - Use Case 2: [Sharing Credentials](UPDATE ME)
 - Use Case 3: [Generate Credentials](UPDATE ME)
-- Use Case 4: [Authenticate to Vault/Application](UPDATE ME)
+- Use Case 4: [Authenticate to Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Auth_To_App)
 - Use Case 5: [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 
 ## Findings Summary
@@ -40,7 +40,13 @@ The only major weakness we could identify in KeePassXC's use of credentials lies
 
 #### 3.3 - [Generate Credentials](UPDATE ME)
 
-#### 3.4 - [Authenticate to Vault/Application](UPDATE ME)
+#### 3.4 - [Authenticate to Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Auth_To_App)
+The required security components associated with Authenticating to Application in KeePassXC include:
+1. Input Validation and Sanitation
+2. Encryption such as Argon2
+3. Password Hashing such that they are computationally difficult
+4. Password Salting
+
 
 #### 3.5 - [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 The required security components associated with exporting the vault in KeePassXC include: 
