@@ -44,11 +44,11 @@ The only major weakness we could identify in KeePassXC's use of credentials lies
 
 #### 3.5 - [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 The required security components associated with exporting the vault in KeePassXC include: 
-1. Using credential hashing 
-2. Use strong cryptographic standards
-3. Use a physical token
+1. Using credential hashing such as *SHA-256*
+2. Use strong cryptographic standards such *AES-256*
+3. Use a physical token such as YubiKey
 4. Use Windows Hello for additional authentication 
-5. Encrypt the exported vault
+5. Encrypt the exported vault using at least *AES-256*
 
 KeePassXC currently provides 1. Use of credential hashing 2. Use of strong cryptographic standards 3. Use of physical tokens and 4. Use of Windows Hello
 
