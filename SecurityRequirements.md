@@ -66,6 +66,12 @@ The required security components associated with Authenticating to Application i
 3. Password Hashing such that they are computationally difficult
 4. Password Salting
 
+KeePassXC currently provides some of these security components. It provides 1. Input Validation and Sanitation, 2. Encryption, 3. Password Hashing, and 4. Password Salting.
+
+After through evaluation, we have determined that 1. Input Validation and Sanitation, 2. Encryption, 3. Password Hashing, and 4. Password Salting.
+
+Although below in 3.5, there is an issue with authentication to application via Windows Hello. In addition, all the above labelled security components are satisfactory.
+
 #### 3.5 - [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 The required security components associated with exporting the vault in KeePassXC include: 
 1. Using credential hashing such as *SHA-256*
@@ -82,7 +88,13 @@ We have discovered that 4. Use Windows Hello for additional authentication is pr
 
 
 ## OSS Project Documentation Review
+KeePassXC does not maintain a particular security policy. Security is somewhat dependent on the user, however issue presented to the KeePassXC developers will be dealt with in the KeePassXC Github [Issues](https://github.com/keepassxreboot/keepassxc/issues), or via e-mail.
 
+KeePassXC documentation per the Github Repo reveal a number of security related issues. Below are a few of the most notable ones and are related to our security requirements:
+* Master Password shown as clear text [#7724](https://github.com/keepassxreboot/keepassxc/issues/7724)
+* Database data not cleared from RAM after lock [#7335](https://github.com/keepassxreboot/keepassxc/issues/7335)
+* Keyboard clipboard is not cleared after timeout [#4126](https://github.com/keepassxreboot/keepassxc/issues/4126)
+* Password generator skips special characters [#3064](https://github.com/keepassxreboot/keepassxc/issues/3064)
 ## Reflection
 Josh led the team again this week and ensured all tasks were completed on time and with high quality. The team worked well together, and all assigned tasks were completed to the team's high standards. Josh worked on the "credential usage" use case. Mitchell worked on the "export credential vault" use case. Aaron worked on the "password generation" use case. Daniel worked on the "password sharing" use case. Neil worked on the "application authentication" use case. 
 
