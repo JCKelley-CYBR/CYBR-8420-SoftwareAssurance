@@ -1,9 +1,11 @@
-## Use Case: Export Vault
+# Use Case: Export Vault
 
-### Description:
+[Back to Security Requirements](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/SecurityRequirements.md)
+
+## Description:
 Each application user will need to create and maintain a password vault. This vault will need to be able to be exported for uses of transferring the vault or for backup and storage.  
 
-### Alignment Analysis:
+## Alignment Analysis:
 I. Security requirements deemed necessary through the use/misuse case diagramming process are as follows:
 * *Credential Hashing* - The credentials needed to decrypt the database should be hashed and never stored in plain text in order to ensure no possible leak of credentials occurs.
 * *Strong Cryptographic Standards* - Strong cryptographic standards should be used in order to prevent the breaking of the hashed credentials as well as the breaking of the database in general.
@@ -24,5 +26,5 @@ KeePassXC does an excellent job of performing security on the database export fu
 
 Additionally, when performing tests on the application, we discovered a bypass to the Windows Hello authentication, which means that it is present but needs to be fixed before it is effective. 
 
-### Diagram: 
+## Diagram: 
 <img src="Export Vault Use CaseV6.jpg">
