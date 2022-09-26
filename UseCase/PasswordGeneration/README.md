@@ -19,7 +19,8 @@ II. Security features included within KeePassXC in regards to prior requirements
 * *Generated Password Complexity* - KeePassXC allows the user to specify the use of all three options when generating a password.
 
 III. Observations:
-The KeePassXC documentation does not specify the process of generating a random password. 
+
+Overall, KeePassXC meets most of the security requirements deemed necessary through the use/misuse case diagramming process. However, the KeePassXC documentation does not specify the process of generating a random password. This will need to be further investigated through source code analysis to determine the alignment with the security requirements. 
 
 ## Diagram:
 <img src="Generate-PasswordV2.jpg" alt="Password Generation Diagram" />
