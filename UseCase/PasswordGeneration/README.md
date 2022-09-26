@@ -3,7 +3,7 @@
 [Back to Security Requirements](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/SecurityRequirements.md)
 
 ## Description:
-The application should generate strong, non-brute forceable passwords for usage acorss sites and applications. 
+The application should generate strong, unpredictable, non-brute forceable passwords for usage across sites and applications. 
 
 ## Alignment Analysis:
 I. Security requirements deemed necessary through the use/misuse case diagramming process are as follows:
