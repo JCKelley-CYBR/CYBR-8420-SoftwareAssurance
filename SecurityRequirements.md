@@ -43,6 +43,18 @@ The only major weakness we could identify in KeePassXC's use of credentials lies
 #### 3.4 - [Authenticate to Vault/Application](UPDATE ME)
 
 #### 3.5 - [Export Credential Vault](UPDATE ME)
+The required security components associated with exporting the vault in KeePassXC include: 
+1. Using credential hashing 
+2. Use strong cryptographic standards
+3. Use a physical token
+4. Use Windows Hello for additional authentication 
+5. Encrypt the exported vault
+
+KeePassXC currently provides 1. Use of credential hashing 2. Use of strong cryptographic standards 3. Use of physical tokens and 4. Use of Windows Hello
+
+After additional evaluation, we have determined that the 1. Use of credential hashing 2. Use of strong cryptographic standards and 3. Use of physical tokens all satisfy our requirements.
+
+We have discovered that 4. Use Windows Hello for additional authentication is present, but currently has a bypass in the application that would allow an attacker to circumnavigate the additional authentication simply by cancelling it. Additionally, the application does not have an option to encrypt the vault on export. However, given the nature of the application keeping the exported vault always local, an additional introduction of a password can be applied to the file, but that exits the scope of the application. 
 
 
 ## OSS Project Documentation Review
