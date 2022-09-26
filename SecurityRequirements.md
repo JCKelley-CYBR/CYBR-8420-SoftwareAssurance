@@ -6,7 +6,7 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 ## Essential Interactions, Diagrams, and Alignment Analysis
 - Use Case 1: [Use Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Credentials)
 - Use Case 2: [Sharing Credentials](UPDATE ME)
-- Use Case 3: [Generate Credentials](UPDATE ME)
+- Use Case 3: [Password Generation](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Password_Generation)
 - Use Case 4: [Authenticate to Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Auth_To_App)
 - Use Case 5: [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 
@@ -38,7 +38,13 @@ The only major weakness we could identify in KeePassXC's use of credentials lies
 
 #### 3.2 - [Sharing Credentials](UPDATE ME)
 
-#### 3.3 - [Generate Credentials](UPDATE ME)
+#### 3.3 - [Password Generation]
+The required security components associated with password generation in KeePassXC include: 
+1. Starring out the Visible Password
+2. Strong Encryption Algorithm
+3. Password Complexity Options
+4. Strong Random Password Generation (under review)
+
 
 #### 3.4 - [Authenticate to Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Auth_To_App)
 The required security components associated with Authenticating to Application in KeePassXC include:
