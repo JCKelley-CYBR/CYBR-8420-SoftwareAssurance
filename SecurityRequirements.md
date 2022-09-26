@@ -41,9 +41,13 @@ The only major weakness we could identify in KeePassXC's use of credentials lies
 #### 3.3 - [Password Generation](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/PasswordGeneration)
 The required security components associated with password generation in KeePassXC include: 
 1. Starring out the Visible Password
-2. Strong Encryption Algorithm
-3. Password Complexity Options
+2. Strong Encryption Algorithm (SHA-256)
+3. Password Complexity Options (numbers, letters, special characters, variable length)
 4. Strong Random Password Generation (under review)
+
+KeePassXC currently provides the following features that directly reference the above security components: (1) Starring out the generated password, (2) using a strong encryption algorithm, and (3) providing password complexity options like the use of numbers, letters, special characters, and variable length.
+
+The only security component which requires further review is the randomization the KeePassXC application uses to generate passwords. This process was not documented anywhere in KeePassXC's documentation, and will require further review of the source code to determine the alignment with our security requirements.
 
 #### 3.4 - [Authenticate to Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Auth_To_App)
 The required security components associated with Authenticating to Application in KeePassXC include:
