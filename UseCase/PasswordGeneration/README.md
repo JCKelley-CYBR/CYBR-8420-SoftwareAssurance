@@ -23,4 +23,6 @@ III. Observations:
 Overall, KeePassXC meets most of the security requirements deemed necessary through the use/misuse case diagramming process. However, the KeePassXC documentation does not specify the process of generating a random password. This will need to be further investigated through source code analysis to determine the alignment with the security requirements. 
 
 ## Diagram:
-<img src="Generate-PasswordV3.jpg" alt="Password Generation Diagram" />
+<img src="Generate-PasswordV4.jpg" alt="Password Generation Diagram" />
+
+V4 of the Password Generation Diagram lacks a level of abstraction which makes the diagram worse, but correct. Please refer to V3 if you would like a better looking, more sensical diagram.
