@@ -5,7 +5,7 @@ Project [Wiki](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/wiki
 
 ## Essential Interactions, Diagrams, and Alignment Analysis
 - Use Case 1: [Use Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/UseCase/Credentials)
-- Use Case 2: [Sharing Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase)
+- Use Case 2: [Sharing Credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/SharingCredentials)
 - Use Case 3: [Password Generation](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Password_Generation)
 - Use Case 4: [Authenticate to Application](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Auth_To_App)
 - Use Case 5: [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
