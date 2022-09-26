@@ -69,6 +69,13 @@ The required security components associated with Authenticating to Application i
 3. Password Hashing such that they are computationally difficult
 4. Password Salting
 
+KeePassXC currently provides some of these security components. It provides 1. Input Validation and Sanitation, 2. Encryption, 3. Password Hashing, and 4. Password Salting.
+
+After through evaluation, we have determined that 1. Input Validation and Sanitation, 2. Encryption, 3. Password Hashing, and 4. Password Salting meet our security requirements.
+
+Although below in 3.5, there is an issue with authentication to application via Windows Hello. In addition, all the above labelled security components are satisfactory.
+
+
 #### 3.5 - [Export Credential Vault](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/UseCase/Export_Vault)
 The required security components associated with exporting the vault in KeePassXC include: 
 1. Using credential hashing such as *SHA-256*
