@@ -1,4 +1,4 @@
-## Use Case: Password Generation
+# Use Case: Password Generation
 
 [Back to Security Requirements](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/SecurityRequirements.md)
 
