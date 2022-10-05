@@ -1,4 +1,4 @@
-## Assurance Claim 3: The system minimizes information disclosure during communication
+## Assurance Claim 4: The system minimizes information disclosure during communication
 [Back to Assurance Cases](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/AssuranceCases/README.md)
 
 ### Description:
