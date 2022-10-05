@@ -2,7 +2,9 @@
 [Back to Assurance Cases](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/AssuranceCases/README.md)
 
 ### Description:
-As a password manager, KeePassXC must ensure the security of the passwords it is storing. This includes during use of the passwords themselves. During use of passwords, being copying or autotype, the systems will minimize disclosure of data. 
+As a password manager, KeePassXC creates and stores passwords. Additionally, KeePassXC must have a way to retrieve those passwords. Retrieval and communication of these passwords must be done securely and in a manner that is convenient to the user. For this KeePassXC uses copying or autotype.
+
+During use of passwords, there must be the concern of how it is done securely. Therefore, when passwords are communicated, being copying or autotype, KeePassXC will minimize disclosure of data. 
 
 ### Alignment Assessment
 
