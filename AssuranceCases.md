@@ -8,7 +8,7 @@
 * Claim 1 - 
 * Claim 2 - 
 * Claim 3 - 
-* Claim 4 - 
+* Claim 4 - The system minimizes information disclosure during communication
 * Claim 5 - 
 
 ## Alignment Assessment Summary

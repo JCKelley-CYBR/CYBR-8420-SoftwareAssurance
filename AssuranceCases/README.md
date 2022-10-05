@@ -6,7 +6,7 @@
 1. -
 2. -
 3. -
-4. -
+4. The system minimizes information disclosure during communication
 5. -
 
 ## Teamwork
