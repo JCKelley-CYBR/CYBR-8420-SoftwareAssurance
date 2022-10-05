@@ -5,22 +5,22 @@
 
 
 ## Claims, Arguments, and Detailed Alignment Assessments
-* Claim 1 - [The system ensures proper user authentication](https://www.google.com)
-* Claim 2 - [The system secures storage of credentials](https://www.google.com)
-* Claim 3 - [The system ensures shared credentials confidentiality](https://www.google.com)
-* Claim 4 - [The system minimizes information disclosure during communication](https://www.google.com)
-* Claim 5 - [The system mitigates the impacts of database theft](https://www.google.com)
+* Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/User_Auth/README.md)
+* Claim 2 - [The system secures storage of credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Storage/README.md)
+* Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality/README.md)
+* Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Communication_Disclosure/README.md)
+* Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft/README.md)
 
 ## Alignment Assessment Summary
-* Assurance Claim 1 - [The system ensures proper user authentication](https://www.google.com)
+* Assurance Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/User_Auth/README.md)
 - 
-* Assurance Claim 2 - [The system secures storage of credentials](https://www.google.com)
+* Assurance Claim 2 - [The system secures storage of credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Storage/README.md)
 - 
-* Assurance Claim 3 - [The system ensures shared credentials confidentiality](https://www.google.com)
+* Assurance Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality/README.md)
 - 
-* Assurance Claim 4 - [The system minimizes information disclosure during communication](https://www.google.com)
+* Assurance Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Communication_Disclosure/README.md)
 - 
-* Assurance Claim 5 - [The system mitigates the impacts of database theft](https://www.google.com)
+* Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft/README.md)
 - 
 ## Reflection
 
