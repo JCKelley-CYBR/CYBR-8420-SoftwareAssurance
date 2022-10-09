@@ -22,9 +22,14 @@
 
   *Conclusion:* Per assurance claim 3, the KeePassXC application provides a reasonably high level confidentiality in alignment with the assurance cases developed during this analysis. There is still more analysis required to adequately dispell all doubts raised in the assurance cases that could identify significant gaps in the application. E2 with the Botan C++ Library and E4 with KeePassXC's method of KDF are two potential gaps.
 * Assurance Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Communication_Disclosure)
-- 
+
+  *Overview*: KeePassXC takes some steps to minimize information disclosure during communication. The first of the major ways this is done is by  keeping the communication solely local. There is never a time where the communication traffic is sent outside of the local network, which can be seen by inspecting the source of the software. The second major way the software does this is by clearing the clipboard after 10 seconds by default if any credentials are copied to it. This however only works if the credentials are copied by the software and not an outside source such as the Windows copy function. This can be seen by a live system test or in the source code. A few other areas exist where KeePassXC could improve the assurance claim, including autotype, and copying. In autotype the software could encrypt its keystrokes to ensure no malicious software present can read typed credentials. For copying, the software could also block any copy function other than that of KeePassXC itself so that it can always clear the clipboard.
+
+  *Conclusion*: Overall, the software does a good job to prove assurance claim 4. There is some ways to improve the software, but as it is, KeePassXC does a good job of minimizing information disclosure during communication. The gaps that remain are the lack of protection of autotype, and the software allows circumnavigation of copy protections.  
+
 * Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft)
 - 
+
 ## Reflection
 
 ## Teamwork
