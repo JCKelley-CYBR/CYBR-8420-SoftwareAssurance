@@ -13,4 +13,4 @@ KeePassXC provides the following evidence per the Assurance Cases identified (E1
 * **E4: *RFC 8018*** - KeePassXC does not use RFC-8018, but instead uses [AES KDF](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/kdf/AesKdf.cpp) or [Argon2 KDF](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/kdf/Argon2Kdf.cpp) for key deriviation. 
 
 ## Diagram
-![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality/CredentialConfidentialityv2.png) 
+![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality/CredentialConfidentiality.png) 
