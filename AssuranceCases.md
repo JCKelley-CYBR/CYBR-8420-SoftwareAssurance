@@ -9,8 +9,8 @@
 * Claim 2 - 
 * Claim 3 - 
 * Claim 4 - 
-* Claim 5 - 
-
+* Claim 5 - [The system mitigates the impacts of database theft.]()
+  
 ## Alignment Assessment Summary
 * Assurance Claim 1 - 
 
@@ -20,7 +20,10 @@
 
 * Assurance Claim 4 - 
 
-* Assurance Claim 5 - 
+* Assurance Claim 5 - [The system mitigates the impacts of database theft.]()
+    Overview: The system provides sufficient features to mitigate the impacts of database theft, both via intentional design and deployment requirements.
+
+    Conclusion: Per assurance claim 5, KeePassXC provides reasonable confidence that the database, even if stole, will remain securew. 
 
 ## Reflection
 

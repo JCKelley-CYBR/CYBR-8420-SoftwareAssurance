@@ -8,7 +8,7 @@ KeePassXC stores credentials in a database that may be subject to theft by a thi
 
 - **E1**: The system encrypts the database in a sufficiently secure manner such that stolen database files cannot be accessed by a third party.
 
-- **E2**: See Assurance Case: [User Authentication](link) 
+- **E2**: See Assurance Case: [User Authentication]() 
 
 
 ### Diagram
