@@ -13,4 +13,4 @@ The evidence listed in the assurance case diagram can be seen elaborated below E
 * E4: __Encryption Protocol Report__- The master key is encrypted in a SHA-256 algorithm and is considered to be strong.
 * E5: __Security Policy Report__- The user can select a backoff period or a time to attempt decryption during database creation. This backoff period inherently increases the time it would take for a brute-force attack to be sucessful, discouraging this attack vector.
 ### Diagram
-![](AssuranceCase.jpg)
+![](AssuranceCaseV2.jpg)
