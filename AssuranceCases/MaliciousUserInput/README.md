@@ -13,4 +13,4 @@ KeePassXC provides the following evidence per the Assurance Cases identified (E1
 * **E4: *Not Aligned*** - KeePassXC does not sign the executable published on their Github [releases](https://github.com/keepassxreboot/keepassxc/releases/tag/2.7.1). However, they do release a signature file which can be installed, along with a SHA digest of the application. Since the signature must be installed seperately, this poses as a misalignment. 
 
 ## Diagram
-![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/Adding-Claims-Remaining/AssuranceCases/MaliciousUserInput/MaliciousUserInput.drawio.png) 
+![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/Adding-Claims-Remaining/AssuranceCases/MaliciousUserInput/MaliciousUserInputV2.drawio.png) 
