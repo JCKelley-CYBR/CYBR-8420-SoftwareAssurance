@@ -8,4 +8,4 @@
 ## Alignment Analysis
 
 ## Diagram
-![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/Adding-Claims-Remaining/AssuranceCases/MaliciousUserInput/MaliciousUserInput.png) 
+![](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/Adding-Claims-Remaining/AssuranceCases/MaliciousUserInput/MaliciousUserInput.drawio.png) 
