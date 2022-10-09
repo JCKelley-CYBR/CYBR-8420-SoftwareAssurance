@@ -7,7 +7,7 @@ KeepassXC's primary responsibility is to take in user credentials and store them
 
 ## Alignment Analysis
 KeePassXC provides the following evidence per the Assurance Cases identified (E1-E4) in the diagram below:
-* **E1:** ***AES CBC Mode - ***
+* **E1:** * **AES CBC Mode - ** *
 * **E2:** ***Hardware Randomness Library - ***
 * **E3:** ***Assurance Case: User Authentication - ***
 * **E4:** ***RFC 8018 - ***
