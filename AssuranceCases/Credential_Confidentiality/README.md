@@ -7,7 +7,7 @@ KeepassXC's primary responsibility is to take in user credentials and store them
 
 ## Alignment Analysis
 KeePassXC provides the following evidence per the Assurance Cases identified (E1-E4) in the diagram below:
-* **E1: *AES CBC Mode*** - 
+* **E1: *AES CBC Mode*** - The cypto services offered by KeepassXC are stored in [Cypto](https://github.com/keepassxreboot/keepassxc/tree/develop/src/crypto) folder containing the different libraries and methods for encrypting, decrypting, and key creation. Keepass allows the use of AES-128 CBC, AES-256 CBC, ChaCha20, and Twofish CBC. As seen in [Crypto.cpp Line 65](https://github.com/keepassxreboot/keepassxc/blob/f56fcdd79b3e064c31fadd6be9acc5749f9aed1e/src/crypto/Crypto.cpp#L65) and [SymmetricCipher.cpp Line 152-162](https://github.com/keepassxreboot/keepassxc/blob/f56fcdd79b3e064c31fadd6be9acc5749f9aed1e/src/crypto/SymmetricCipher.cpp#L152).
 * **E2: *Hardware Randomness Library*** - 
 * **E3: *Assurance Case: User Authentication*** - 
 * **E4: *RFC 8018*** - 
