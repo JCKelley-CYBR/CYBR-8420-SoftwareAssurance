@@ -23,7 +23,7 @@
 * Assurance Claim 5 - [The system mitigates the impacts of database theft.]()
     Overview: The system provides sufficient features to mitigate the impacts of database theft, both via intentional design and deployment requirements.
 
-    Conclusion: Per assurance claim 5, KeePassXC provides reasonable confidence that the database, even if stole, will remain securew. 
+    Conclusion: Per assurance claim 5, KeePassXC provides reasonable confidence that the database, even if stole, will remain secure. 
 
 ## Reflection
 
