@@ -16,9 +16,9 @@ During use of passwords, there must be the concern of how it is done securely. T
 
 - **E4**: A review of the source shows that no connections are made when copying a password or when using autotype to fill the password. This helps minimize the disclosure of data by keeping it local through out usage.
 
-- **E5**: See Assurance Case: [User Authentication](link) 
+- **E5**: See Assurance Case: [User Authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/User_Auth) 
 
-- **E6**: See Assurance Case: [Credential Confidentiality](link)
+- **E6**: See Assurance Case: [Credential Confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Credential_Confidentiality)
 
 
 ### Diagram
