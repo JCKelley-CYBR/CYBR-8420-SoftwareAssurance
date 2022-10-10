@@ -3,14 +3,14 @@
 # Team Let Me Make Sure Nobody is Breaking into My House Real Fast, One Sec
 
 ## Claims, Arguments, and Detailed Alignment Assessments
-* Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/User_Auth)
+* Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/User_Auth)
 * Claim 2 - [The system ensures reasonable protections from malicious user input](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/MaliciousUserInput)
-* Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality)
-* Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Communication_Disclosure)
-* Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft)
+* Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Credential_Confidentiality)
+* Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Comms_Disclosure)
+* Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Database_Theft)
 
 ## Alignment Assessment Summary
-* Assurance Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/User_Auth)
+* Assurance Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/User_Auth)
   
   *Overview:* KeepassXC uses various methods to ensure that the security of the password vault is not compromised and that information is not at risk of disclosure. Using AES-256 for master password encryption, randomly generated adjustable salts, a backoff period for the password entry, and key derivation using Argon2. There are a couple of adjustable security features, an extended length of which is recommended. Those are some of the gaps that can be seen on the user end. There are considerations to database security, which are covered in [Assurance Claim 5](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft).
   
@@ -18,19 +18,19 @@
 
 * Assurance Claim 2 - [The system ensures reasonable protections from malicious user input](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/MaliciousUserInput)
 - 
-* Assurance Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality)
+* Assurance Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Credential_Confidentiality)
 
   *Overview:* KeepassXC takes many steps to protect the confidentiality of the information stored in the root databases and subsequent database shares. AES-128 CBC, AES-256 CBC, ChaCha20, and Twofish CBC encryption are used to encrypt the database. The default encryption method is AES-256 CBC in conjunction with using the KBX4 database type. In order for the system to ensure true randomness for generated ciphertext, KeePassXC utilizes the Botan C++ library. The details, including the effectiveness, remain unknown as there is little relevant documentation available from KeePassXC. The use of proper authentication mechanisms is critical to the security of the root database and the security of subsequent database shares of either individual or groups of credentials. Finally, AES or Argon2 is used for the essential derivation function (KDF), which generates a key from the users' input password and stretches that key per secret key generation best practices. Further analysis of the source code could reveal a gap in the KDF via not adequately stretching the generated secret key.
 
   *Conclusion:* Per assurance claim 3, the KeePassXC application provides reasonably high-level confidentiality in alignment with the assurance cases developed during this analysis. More analysis is required to adequately dispel all doubts raised in the assurance cases that could identify significant gaps in the application. E2 with the Botan C++ Library and E4 with KeePassXC's method of KDF are two potential gaps.
 
-* Assurance Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Communication_Disclosure)
+* Assurance Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Comms_Disclosure)
 
   *Overview*: KeePassXC takes some steps to minimize information disclosure during communication. The first method is to keep the communication solely local. There is never a time when the communication traffic is sent outside the local network, which can be seen by inspecting the source of the software. The second significant way the software does this is by clearing the clipboard after 10 seconds by default if any credentials are copied to it. This technique only works if credentials are copied by the software and not an outside source, such as the Windows copy function. This behavior can be analyzed in a live system test or source code. Other areas exist where KeePassXC could improve the assurance claim, including autotype and copying. In autotype, the software could encrypt its keystrokes to ensure no malicious software present can read typed credentials. The software could also block any copy function other than that of KeePassXC itself to always clear the clipboard.
 
   *Conclusion*: The software does an excellent job proving assurance claim 4. There are ways to improve the software, but as it is, KeePassXC does a reasonable job of minimizing information disclosure during communication. The remaining gaps are the lack of autotype protection and allowing circumnavigation of clipboard protections.   
 
-* Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft)
+* Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Database_Theft)
 - 
 
 ## Reflection
