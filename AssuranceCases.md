@@ -6,7 +6,7 @@
 
 ## Claims, Arguments, and Detailed Alignment Assessments
 * Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/User_Auth)
-* Claim 2 - [The system secures storage of credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Storage)
+* Claim 2 - [The system ensures reasonable protections from malicious user input](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/MaliciousUserInput)
 * Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality)
 * Claim 4 - [The system minimizes information disclosure during communication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Communication_Disclosure)
 * Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft)
@@ -18,7 +18,7 @@
   
   *Conclusion:* Per assurance claim 1, the KeePassXC application exhibits high alignment with the assurance cases with the assurance cases developed in this study.
 
-* Assurance Claim 2 - [The system secures storage of credentials](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Storage/README.md)
+* Assurance Claim 2 - [The system ensures reasonable protections from malicious user input](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/MaliciousUserInput)
 - 
 * Assurance Claim 3 - [The system ensures shared credentials confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Credential_Confidentiality)
 
@@ -36,6 +36,11 @@
 - 
 
 ## Reflection
+Josh continued to lead the team this week and ensured all tasks were completed on time and with high quality. The team worked well together, and all assigned tasks were completed to the team's high standards. Josh analyzed the "The system ensures shared credentials confidentiality" assurance case. Mitchell analyzed the "The system minimizes information disclosure during communication" assurance case. Aaron worked on the "The system ensures reasonable protections from malicious user input" assurance case. Daniel worked on the "The system mitigates the impacts of database theft" assurance case. Neil worked on the "The system ensures proper user authentication" assurance case. 
+
+Josh's leadership continues to satisfy the team's needs. The team is still working great with one another to be able to complete the goals of the task at hand. Constructive criticism is exchanged which helps our groups meet the quality standards set. No issues arose this week. The team continues to work well as a unit and accomplish our weekly goals. 
+
+> ### This is a __jovial__ team environment.
 
 ## Teamwork
 
