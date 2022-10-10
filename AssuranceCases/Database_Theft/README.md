@@ -14,4 +14,4 @@ KeePassXC provides the following evidence per the Assurance Cases identified (E1
 - **E3**: **System separation of credentials for database instances** - The system uses separate credentials for authentication with different instances of the database. See Assurance Case: [Credential Confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Credential_Confidentiality).
 
 ### Diagram
-<img src="AssuranceCases\Database_Theft\Assurance Case.drawio.png">
+<img src="Assurance Case.drawio.png">
