@@ -33,9 +33,10 @@
   *Conclusion*: The software does an excellent job proving assurance claim 4. There are ways to improve the software, but as it is, KeePassXC does a reasonable job of minimizing information disclosure during communication. The remaining gaps are the lack of autotype protection and allowing circumnavigation of clipboard protections.   
 
 * Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Database_Theft)
-    *Overview:* The system provides sufficient features to mitigate the impacts of database theft, both via intentional design and deployment requirements. The database is encrypted while locally stored, providing adequate protection should the file be stolen in this state. Credentials for the database are able to be backed up with YubiKey as a method of 2 factor authentication, providing security for the potential of credentials theft.
+    
+  *Overview:* The system provides sufficient features to mitigate the impacts of database theft, both via intentional design and deployment requirements. The database is encrypted while locally stored, providing adequate protection should the file be stolen in this state. Credentials for the database can be backed up with YubiKey as a method of 2-factor authentication, providing security against the potential of credential theft.
 
-    *Conclusion:* Per assurance claim 5, KeePassXC provides reasonable confidence that the database, even if stole, will remain secure. 
+  *Conclusion:* Per assurance claim 5, KeePassXC provides reasonable confidence that the database, even if stole, will remain secure. Due to proper methods of user authentication and maintaining confidentiality through encryption and key derivation.
 
 ## Reflection
   Josh continued to lead the team this week and ensured all tasks were completed on time and of high quality. The team worked well together, and all assigned tasks were to the team's high standards. Josh analyzed the "The system ensures shared credentials confidentiality" assurance case. Mitchell analyzed the "The system minimizes information disclosure during communication" assurance case. Aaron worked on the "The system ensures reasonable protections from malicious user input" assurance case. Daniel worked on the "The system mitigates the impacts of database theft" assurance case. Neil worked on the "The system ensures proper user authentication" assurance case. 
