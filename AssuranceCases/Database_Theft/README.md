@@ -7,10 +7,11 @@ KeePassXC stores credentials in a database that may be subject to theft by a thi
 ### Alignment Assessment
 KeePassXC provides the following evidence per the Assurance Cases identified (E1-E2) in the diagram below:
 
-- **E1**: The system encrypts the database in a sufficiently secure manner such that stolen database files reasonably cannot be accessed by a third party.
+- **E1**: The system encrypts the database in a sufficiently secure manner such that stolen database files reasonably cannot be accessed by a third party. See Assurance Case: [Credential Confidentiality]().
 
-- **E2**: See Assurance Case: [User Authentication]() 
+- **E2**: **Multifactor authentication** The system implements YubiKey/OnlyKey as manners of 2 factor authentication for database encryption.
 
+- **E3**: The system uses separate credentials for authentication with difference instances of the database. See Assurance Case: [Credential Confidentiality]().
 
 ### Diagram
-<img src="Assurance Case DB Theft.png">
+<img src="AssuranceCases\Database_Theft\Assurance Case.drawio.png">
