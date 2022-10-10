@@ -6,4 +6,5 @@ review for assurance case 2/3. necessary changes are made and merged into main.
 review for assurance case 4. necessary changes are made and merged into main
 review for assurance case 1. necessary changes are made and merged into main
 review for assurance case 5. necessary changes are made and merged into main
+Standard check by Josh, accompanied by Mitchell and Dani
 ### conclusion of meeting. 
