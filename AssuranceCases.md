@@ -25,7 +25,7 @@
 
   *Conclusion*: Overall, the software does a good job to prove assurance claim 4. There is some ways to improve the software, but as it is, KeePassXC does a good job of minimizing information disclosure during communication. The gaps that remain are the lack of protection of autotype, and the software allows circumnavigation of copy protections.  
 
-* Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/Database_Theft)
+* Assurance Claim 5 - [The system mitigates the impacts of database theft](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Database_Theft)
     *Overview:* The system provides sufficient features to mitigate the impacts of database theft, both via intentional design and deployment requirements. The database is encrypted while locally stored, providing adequate protection should the file be stolen in this state. Credentials for the database are able to be backed up with YubiKey as a method of 2 factor authentication, providing security for the potential of credentials theft.
 
     *Conclusion:* Per assurance claim 5, KeePassXC provides reasonable confidence that the database, even if stole, will remain secure. 
