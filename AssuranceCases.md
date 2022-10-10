@@ -44,7 +44,7 @@ Josh's leadership continues to satisfy the team's needs. The team is still worki
 
 ## Teamwork
 
-Project Board: [Assurance Case](https://github.com/users/JCKelley-CYBR/projects/1)
+Project Board: [Assurance Case](https://github.com/users/JCKelley-CYBR/projects/3/views/1)
 
 ## Open-Source Project: KeePassXC
 
