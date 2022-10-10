@@ -14,7 +14,7 @@
 ## Alignment Assessment Summary
 * Assurance Claim 1 - [The system ensures proper user authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/edit/Adding-Claims-Remaining/AssuranceCases/User_Auth)
   
-  *Overview:* KeepassXC uses a variety of methods to ensure that the security of the password vault is not compromised and information is not disclosed. Using AES-256 for master password encryption, randomly generated adjustable salts, a backoff period for the password entry, key derivation using Argon2. As well as other methods of security. There are a couple of adjustable security features a long length of all of them are reccomended.
+  *Overview:* KeepassXC uses a variety of methods to ensure that the security of the password vault is not compromised and information is not disclosed. Using AES-256 for master password encryption, randomly generated adjustable salts, a backoff period for the password entry, key derivation using Argon2. As well as other methods of security. There are a couple of adjustable security features a long length of all of them are reccomended. Those are some of the gaps that can be seen on the user end. There are considerations to databse security which is covered in assurance claim 5.
   
   *Conclusion:* Per assurance claim 1, the KeePassXC application exhibits high alignment with the assurance cases with the assurance cases developed in this study.
 
