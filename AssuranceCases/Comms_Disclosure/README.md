@@ -8,17 +8,17 @@ During the use of passwords, there must be a concern about how it is done secure
 
 ### Alignment Assessment
 
-- **E1**: Currently not implemented, but the system could prevent any copy function outside of its own from working so that the system can purge password data from the clipboard and is never out of view of the system.
+- **E1: Outside copy function prevention**: Currently not implemented, but the system could prevent any copy function outside of its own from working so that the system can purge password data from the clipboard and is never out of view of the system.
 
-- **E2**: KeePassXC does store the contents of the password to the clipboard if copied, which can be insecure if someone gains access to the machine and the password is still remembered. However, the system does clear the clipboard after 10 seconds so that the user gets enough time to paste the password, but it does not continue to exist afterward. This protection helps minimize disclosure by preventing someone with physical access from seeing credentials stored in the clipboard.
+- **E2: Purge clipboard**: KeePassXC does store the contents of the password to the clipboard if copied, which can be insecure if someone gains access to the machine and the password is still remembered. However, the system does clear the clipboard after 10 seconds so that the user gets enough time to paste the password, but it does not continue to exist afterward. This protection helps minimize disclosure by preventing someone with physical access from seeing credentials stored in the clipboard.
 
-- **E3**: Not currently implemented. The system could encrypt the keystrokes for autotype with a cryptographically secure standard such as AES 256. This addition would avoid accidental disclosure of information during autotype.
+- **E3: Keystroke encryption**: Not currently implemented. The system could encrypt the keystrokes for autotype with a cryptographically secure standard such as AES 256. This addition would avoid accidental disclosure of information during autotype.
 
-- **E4**: A source review shows that no connections are made when copying a password or using an autotype to fill in the password. This functionality helps minimize the disclosure of data by keeping it local throughout usage.
+- **E4: Offline communications**: A source review shows that no connections are made when copying a password or using an autotype to fill in the password. This functionality helps minimize the disclosure of data by keeping it local throughout usage.
 
-- **E5**: See Assurance Case: [User Authentication](link) 
+- **E5: Securing data at rest**: See Assurance Case: [User Authentication](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/User_Auth) 
 
-- **E6**: See Assurance Case: [Credential Confidentiality](link)
+- **E6: Securing data at rest**: See Assurance Case: [Credential Confidentiality](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/AssuranceCases/Credential_Confidentiality)
 
 
 ### Diagram
