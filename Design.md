@@ -6,7 +6,7 @@
 
 ## 2. Data Flow Diagram and Threat Modeling
   1. [KeePassXC Data Flow Diagram](Design/README.md)
-  2. [Threat Modeling Report](Design/Report.htm) This needs to be changed to the real threat modelling report when it is done
+  2. [Threat Modeling Report](https://htmlpreview.github.io/?https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/Design/Report.htm) This needs to be changed to the real threat modelling report when it is done
 ## 3. Individual Threat Review
 - Threat ID: 
 ## 4. Design Observations Summary
