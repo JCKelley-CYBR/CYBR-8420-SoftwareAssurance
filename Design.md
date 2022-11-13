@@ -181,7 +181,7 @@ To analyze all of the threats generated from TMT of the highest priority, we div
     - Threat Name: KeePassXC Desktop Application May be Subject to Elevation of Privilege Using Remote Code Execution
     - Category: Elevation Of Privilege
     - Description: User may be able to remotely execute code for KeePassXC Desktop Application.
-    - Existing Mitigations: The KeePassXC Desktop Application cannot be accessed remotely.
+    - Existing Mitigations: KeePassXC Desktop Application runs at the system defined user trust level.
     - Notable Gap: None
 
 - *Threat ID: 26*
@@ -270,6 +270,10 @@ From these 25 established high-priority threats, mitigations were formulated and
 7. KeePassXC does not perform any process verification.
 
 ## 5. Team Reflection
+
+Josh's leadership continues to steer this team forward to ensure that all tasks are complete to a high standard in a timely manner. The team worked well together during all meetings thoughout the week, contributing together to the creation of the Data Flow Diagram and the subsequent Threat Modeling Report. Mitchell did an exceptional job managing the Microsoft Threat Modeling Tool and the individual threats generated were divided among the team members for indepth examination. Aaron lead the writing effort, together with the team, to evaulation the Software Security Engineering findings and gaps.
+
+Our team continues to work together in a smooth and flexible fashion with excellent communication among members, addressing any changes to the project that needed to be made as necessary. There were no issues with our teamwork this week and our members have continued to accomplish all tasks to satisfaction.
 
 > ### This is a __jovial__ team environment.
 
