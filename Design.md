@@ -16,43 +16,98 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
   - Description: Log readers can come under attack via log files. Consider ways to canonicalize data in all logs. Implement a single reader for the logs, if possible, in order to reduce attack surface area. Be sure to understand and document log file elements which come from untrusted sources.
   - Existing Mitigations: KeePassXC does not use any form of logs that could be tampered with.
   - Notable Gap: None
+
 - *Threat ID: 2*
   - Threat Name: Spoofing of Source Data Store File System
   - Category: Spoofing
   - Description: File System may be spoofed by an attacker and this may lead to incorrect data delivered to KeePassXC Desktop Application. Consider using a standard authentication mechanism to identify the source data store.
   - Existing Mitigations: No mitigations
   - Notable Gap: **KeePassXC does not conduct file integrity checks, and this sort of spoofing results in application crashing**
+
 - *Threat ID: 3*
   - Threat Name: Spoofing the KeePassXC Desktop Application Process
   - Category: Spoofing
   - Description: KeePassXC Desktop Application may be spoofed by an attacker and this may lead to information disclosure by File System. Consider using a standard authentication mechanism to identify the destination process.
   - Existing Mitigations: No sensitive information stored in the file system
   - Notable Gap: None
+
 - *Threat ID: 4*
   - Threat Name: Elevation by Changing the Execution Flow in KeePassXC Desktop Application
   - Category: Elevation Of Privilege
   - Description: An attacker may pass data into KeePassXC Desktop Application in order to change the flow of program execution within KeePassXC Desktop Application to the attacker's choosing.
   - Existing Mitigations: No mitigations
   - Notable Gap: **Application will crash with any changes to the base file system**
+
 - *Threat ID: 5*
   - Threat Name: KeePassXC Desktop Application May be Subject to Elevation of Privilege Using Remote Code Execution
   - Category: Elevation Of Privilege
   - Description: File System may be able to remotely execute code for KeePassXC Desktop Application.
   - Existing Mitigations: KeePassXC trusts all file system operations
   - Notable Gap: **KeePassXC does not perform any form of file integrity checking subjecting the application to potential malicious input from the file system.**
+
 - *Threat ID: 6*
   - Threat Name: Data Store Inaccessible
   - Category: Denial of Service
   - Description: An external agent prevents access to a data store on the other side of the trust boundary.
   - Existing Mitigations: None, in the event the application fails to communicate with the file system the application has a hard interrupt and crashes.
   - Notable Gap: **KeePassXC requires the file system to be 100% functional to perform any operation.**
+ 
 - *Threat ID: 7*
   - Threat Name: Data Flow Application Data Is Potentially Interrupted
   - Category: Denial of Service
   - Description: KeePassXC Desktop Application crashes, halts, stops or runs slowly; in all cases violating an availability metric.
   - Existing Mitigations: None, in the event the application fails to communicate with the file system the application has a hard interrupt and crashes.
   - Notable Gap: **KeePassXC requires the file system to be 100% functional to perform any operation.**
-  
+
+- *Threat ID: 15*
+  - Threat Name: Authorization Bypass
+  - Category: Information Disclosure
+  - Description: Can you access File System and bypass the permissions for the object? For example by editing the files directly with a hex editor, or reaching it via filesharing? Ensure that your program is the only one that can access the data, and that all other subjects have to use your interface.
+  - Existing Mitigations: KeePassXC does not unlock the Database if it has been tampered with.
+  - Notable Gap:  **In the case of using Windows Hello, there is a possible bypass via closing the Windows Hello window.**
+
+- *Threat ID: 16*
+  - Threat Name: Data Store Denies File System Potentially Writing Data
+  - Category: Repudiation
+  - Description: File System claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.
+  - Existing Mitigations: KeePassXC trusts all file system operations.
+  - Notable Gap: **KeePassXC could allow data that the file system did not write to the other side of the trust boundary. Logging is not present.**
+
+- *Threat ID: 17*
+  - Threat Name:  Potential Weak Protections for Audit Data
+  - Category: Repudiation
+  - Description: Consider what happens when the audit mechanism comes under attack, including attempts to destroy the logs, or attack log analysis programs. Ensure access to the log is through a reference monitor, which controls read and write separately. Document what filters, if any, readers can rely on, or writers should expect
+  - Existing Mitigations: None.
+  - Notable Gap: **KeePassXC does not have logging capability.**
+
+- *Threat ID: 18*
+  - Threat Name: Insufficient Auditing
+  - Category: Repudiation
+  - Description: Does the log capture enough data to understand what happened in the past? Do your logs capture enough data to understand an incident after the fact? Is such capture lightweight enough to be left on all the time? Do you have enough data to deal with repudiation claims? Make sure you log sufficient and appropriate data to handle a repudiation claims. You might want to talk to an audit expert as well as a privacy expert about your choice of data.
+  - Existing Mitigations: None.
+  - Notable Gap: **KeePassXC does not have logging cabability.**
+
+- *Threat ID: 19*
+  - Threat Name: Data Logs from an Unknown Source
+  - Category: Repudiation
+  - Description: Do you accept logs from unknown or weakly authenticated users or systems? Identify and authenticate the source of the logs before accepting them.
+  - Existing Mitigations: None.
+  - Notable Gap: **KeePassXC does not have logging cabability.**
+
+- *Threat ID: 20*
+  - Threat Name: Lower Trusted Subject Updates Logs
+  - Category: Repudiation
+  - Description: If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log.
+  - Existing Mitigations: None.
+  - Notable Gap: **KeePassXC does not have logging cabability.**
+
+- *Threat ID: 21*
+  - Threat Name: The File System Data Store Could Be Corrupted
+  - Category: Tampering
+  - Description: Data flowing across User Data may be tampered with by an attacker. This may lead to corruption of File System. Ensure the integrity of the data flow to the data store.
+  - Existing Mitigations: KeePass will not operate without functioning file system.
+  - Notable Gap: **None.**
+
 - *Threat ID: 29*
     - Threat Name: Data Flow Sniffing
     - Category:	Information Disclosure
