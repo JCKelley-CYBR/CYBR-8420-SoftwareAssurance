@@ -249,10 +249,26 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
     - Notable Gap: **KeePassXC does not save any logs about the user, their activities, or the data they sent and received.**
 
 ## 4. Design Observations Summary
-This here
-### 4.1 Findings:
 
-### 4.2 Gaps:
+The KeePassXC application is not a security oriented application, as has many notable gaps in the security features. 
+
+By outlining the overall data flow of KeePassXC and identifying potential trust boundaries, automatic threat generation revealed a number of potential security threats. In general, KeePassXC facilitates the transfer of data between one External Interactor (EI) and one Data Store (DS). Information is relayed to and from the application by the user. A single, local DS is located on the file system of the local computer.
+
+With these entities in mind, trust boundaries were established between the User and KeePassXC, and between KeePassXC and the local filesystem. From these trust boundaries, the Microsoft Threat Modeling tool recognized a large number of automatically generated threats. From these threats, 25 were evaluated by the team as High Priority.
+
+From these 25 established high priority threats, mitigations were formulated and justified. From these justifications, KeePassXC was canvassed for comparative flaws. While KeePassXC generally ensures authentication and encryption security, there are a number of gaps that became evident throughout the analysis.
+
+### 4.1 Notable Gaps:
+
+- KeePassXC does not perform file integrity checking.
+  - The KeePassXC filesystem must be 100% intact -- otherwise, the application performs a hard crash.
+  - KeePassXC does not perform any types of remediation actions on the filesystem.
+- KeePassXC does not perform any logging or auditing.
+- KeePassXC runs as a user process, and therefore has access to the user file system and retains that users permissions.
+- KeePassXC does nothing to prevent excessive resource consumption.
+- In the case of using Windows Hello, a MFA authentication bypass exists within KeePassXC.
+- KeePassXC does not encrypt the datastream between the user and the application. 
+- KeePassXC does not perform any process verification.
 
 ## 5. Team Reflection
 
