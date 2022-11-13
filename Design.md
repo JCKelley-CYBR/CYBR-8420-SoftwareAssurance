@@ -280,7 +280,7 @@ Our team continues to work together in a smooth and flexible fashion with excell
 
 ## Teamwork
 
-Project Board: [Assurance Case](https://github.com/users/JCKelley-CYBR/projects/3/views/1)
+Project Board: [Design](https://github.com/users/JCKelley-CYBR/projects/4)
 
 ## Open-Source Project: KeePassXC
 
