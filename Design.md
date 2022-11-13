@@ -3,12 +3,11 @@
 ## Team Let Me Make Sure Nobody is Breaking into My House Real Fast, One Sec
 
 ## 1. Introduction
-To mitigate all of the highest impact threats, all generated threats from TMT of highest priority were divided amongst the team and assessed for mitigations that already exist in the KeePassXC implementation. Each invidual threat review is listed as follows: (1) identification of the threat, (2) mitigation justification is given, (3) existing & implemented mitigations are listed, and (4) any gaps in identified threats and existing mitigations are highlighted.
+To analyze all of the threats generated from TMT of the highest priority, we divided the team and assessed for mitigations already existing in the KeePassXC implementation. Each threat review is listed as follows: (1) identification of the threat, (2) mitigation justification is given, (3) existing & implemented mitigations are listed, and (4) any gaps in identified threats and existing mitigations are highlighted.
 
 ## 2. Data Flow Diagram and Threat Modeling
   1. [KeePassXC Data Flow Diagram](Design/README.md)
-  2. [Threat Modeling Report](https://htmlpreview.github.io/?https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/Design/Report.htm) This needs to be changed to the real threat modelling report when it is done
-
+  2. [Threat Modeling Report](https://htmlpreview.github.io/?https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/Design/Report.htm) 
 ## 3. Individual Threat Review
 - *Threat ID: 1*
   - Threat Name: Risks from Logging
@@ -22,7 +21,7 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
   - Category: Spoofing
   - Description: File System may be spoofed by an attacker and this may lead to incorrect data delivered to KeePassXC Desktop Application. Consider using a standard authentication mechanism to identify the source data store.
   - Existing Mitigations: No mitigations
-  - Notable Gap: **KeePassXC does not conduct file integrity checks, and this sort of spoofing results in application crashing**
+  - Notable Gap: **KeePassXC does not conduct file integrity checks and this spoofing results in application crashing**
 
 - *Threat ID: 3*
   - Threat Name: Spoofing the KeePassXC Desktop Application Process
@@ -43,35 +42,35 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
   - Category: Elevation Of Privilege
   - Description: File System may be able to remotely execute code for KeePassXC Desktop Application.
   - Existing Mitigations: KeePassXC trusts all file system operations
-  - Notable Gap: **KeePassXC does not perform any form of file integrity checking subjecting the application to potential malicious input from the file system.**
+  - Notable Gap: **KeePassXC does not perform any form of file integrity checking, subjecting the application to potentially malicious input from the file system.**
 
 - *Threat ID: 6*
   - Threat Name: Data Store Inaccessible
   - Category: Denial of Service
   - Description: An external agent prevents access to a data store on the other side of the trust boundary.
-  - Existing Mitigations: None, in the event the application fails to communicate with the file system the application has a hard interrupt and crashes.
+  - Existing Mitigations: None. In the event the application fails to communicate with the file system, the KeePassXC has a hard interrupt and crashes.
   - Notable Gap: **KeePassXC requires the file system to be 100% functional to perform any operation.**
 
 - *Threat ID: 7*
   - Threat Name: Data Flow Application Data Is Potentially Interrupted
   - Category: Denial of Service
   - Description: KeePassXC Desktop Application crashes, halts, stops or runs slowly; in all cases violating an availability metric.
-  - Existing Mitigations: None, in the event the application fails to communicate with the file system the application has a hard interrupt and crashes.
+  - Existing Mitigations: None. If the application fails to communicate with the file system, the application has a hard interrupt and crashes.
   - Notable Gap: **KeePassXC requires the file system to be 100% functional to perform any operation.**
   
 - Threat ID: 8
   - Threat Name: Potential Process Crash or Stop for KeePassXC Desktop Application 
-  - Description:	KeePassXC Desktop Application crashes, halts, stops or runs slowly; in all cases violating an availability metric. 
+  - Description: KeePassXC Desktop Application crashes, halts, stops or runs slowly; in all cases violating an availability metric. 
   - Category:	Denial Of Service
-  - Existing mitigation: None known of, but we have not been able to get the program to crash
+  - Existing mitigation: None. We have not been able to get the program to crash
   - Notable Gap: None
   
 - Threat ID: 9
   - Threat Name: Weak Access Control for a Resource  
-  - Description:	Improper data protection of File System can allow an attacker to read information not intended for disclosure. Review authorization settings.
+  - Description:	Improper data protection of File System can allow an attacker to read information not intended for disclosure—review authorization settings.
   - Category:	Information Disclosure
   - Existing mitigation: Runs as a user process which gives it the same file permissions that the user who runs it has
-  - Notable Gap: This is an unnecessary level of permissions, as KeePassXC doesn't need access to all the user's files
+  - Notable Gap: This is an unnecessary level of permissions, as KeePassXC does not need access to all the user's files
   
 - Threat ID: 10
   - Threat Name: Potential Data Repudiation by KeePassXC Desktop Application  
@@ -84,29 +83,29 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
   - Threat Name: Data Store Inaccessible  
   - Description:	An external agent prevents access to a data store on the other side of the trust boundary.
   - Category:	Denial Of Service
-  - Existing mitigation: Application errors if filesystem not intact
-  - Notable Gap: KeePassXC needs the filesystem and takes no actions to automatically fix tampering
+  - Existing mitigation: Application errors if the filesystem is not intact.
+  - Notable Gap: KeePassXC needs the filesystem and takes no actions to fix tampering automatically.
   
 - Threat ID: 12
   - Threat Name: Data Flow User Data Is Potentially Interrupted  
   - Description:	An external agent interrupts data flowing across a trust boundary in either direction.
   - Category:	Denial Of Service
-  - Existing mitigation: Application errors if the filesystem is no intact 
-  - Notable Gap: KeePassXC needs the filesystem and will take no actions to fix it if found missing or corrupt
+  - Existing mitigation: Application errors if the filesystem is not intact.
+  - Notable Gap: KeePassXC needs the filesystem and will take no actions to fix it if found missing or corrupt.
   
 - Threat ID: 13
   - Threat Name: Potential Excessive Resource Consumption for KeePassXC Desktop Application or File System  
   - Description:	Does KeePassXC Desktop Application or File System take explicit steps to control resource consumption? Resource consumption attacks can be hard to deal with, and there are times that it makes sense to let the OS do the job. Be careful that your resource requests don't deadlock, and that they do timeout.
   - Category:	Denial Of Service
-  - Existing mitigation: None
-  - Notable Gap: KeePassXC does nothing to prevent excessive resource consumption
+  - Existing mitigation: None.
+  - Notable Gap: KeePassXC does nothing to prevent excessive resource consumption.
   
 - Threat ID: 14
   - Threat Name: Data Flow Sniffing  
-  - Description:	Data flowing across User Data may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow.
+  - Description: Data flowing across User Data may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow.
   - Category:	Information Disclosure
-  - Existing mitigation: All data in motion is encrypted and with proper up to date versions of best practices
-  - Notable Gap: None
+  - Existing mitigation: All data in motion is encrypted and with proper up-to-date versions of best practices.
+  - Notable Gap: None.
   
 - *Threat ID: 15*
   - Threat Name: Authorization Bypass
@@ -134,27 +133,27 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
   - Category: Repudiation
   - Description: Does the log capture enough data to understand what happened in the past? Do your logs capture enough data to understand an incident after the fact? Is such capture lightweight enough to be left on all the time? Do you have enough data to deal with repudiation claims? Make sure you log sufficient and appropriate data to handle a repudiation claims. You might want to talk to an audit expert as well as a privacy expert about your choice of data.
   - Existing Mitigations: None.
-  - Notable Gap: **KeePassXC does not have logging cabability.**
+  - Notable Gap: **KeePassXC does not have logging capability.**
 
 - *Threat ID: 19*
   - Threat Name: Data Logs from an Unknown Source
   - Category: Repudiation
   - Description: Do you accept logs from unknown or weakly authenticated users or systems? Identify and authenticate the source of the logs before accepting them.
   - Existing Mitigations: None.
-  - Notable Gap: **KeePassXC does not have logging cabability.**
+  - Notable Gap: **KeePassXC does not have logging capability.**
 
 - *Threat ID: 20*
   - Threat Name: Lower Trusted Subject Updates Logs
   - Category: Repudiation
   - Description: If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log.
   - Existing Mitigations: None.
-  - Notable Gap: **KeePassXC does not have logging cabability.**
+  - Notable Gap: **KeePassXC does not have logging capability.**
 
 - *Threat ID: 21*
   - Threat Name: The File System Data Store Could Be Corrupted
   - Category: Tampering
   - Description: Data flowing across User Data may be tampered with by an attacker. This may lead to corruption of File System. Ensure the integrity of the data flow to the data store.
-  - Existing Mitigations: KeePass will not operate without functioning file system.
+  - Existing Mitigations: KeePass will not operate without a functioning file system.
   - Notable Gap: **None.**
 
 - *Threat ID: 22*
@@ -176,11 +175,11 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
     - Category:	Elevation Of Privilege
     - Description: An attacker may pass data into KeePassXC Desktop Application in order to change the flow of program execution within KeePassXC Desktop Application to the attacker's choosing.
     - Existing Mitigations: No mitigations
-    - Notable Gap: The KeePassXC Desktop Application will error out when execution flows is interrupted.
+    - Notable Gap: The KeePassXC Desktop Application will error when execution flows are interrupted.
 
 - *Threat ID: 25*
     - Threat Name: KeePassXC Desktop Application May be Subject to Elevation of Privilege Using Remote Code Execution
-    - Category:	Elevation Of Privilege
+    - Category: Elevation Of Privilege
     - Description: User may be able to remotely execute code for KeePassXC Desktop Application.
     - Existing Mitigations: KeePassXC Desktop Application runs at the system defined user trust level.
     - Notable Gap: None
@@ -188,8 +187,8 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
 - *Threat ID: 26*
     - Threat Name: Elevation Using Impersonation
     - Category:	Elevation Of Privilege
-    - Description: The KeePassXC Desktop Application may be able to impersonate the context of User in order to gain additional privilege.
-    - Existing Mitigations: KeePassXC Desktop Application runs at the system defined user trust level.
+    - Description: The KeePassXC Desktop Application may be able to impersonate the context of user in order to gain additional privilege.
+    - Existing Mitigations: KeePassXC Desktop Application runs at the system-defined user trust level.
     - Notable Gap: None.
 
 - *Threat ID: 27*
@@ -224,13 +223,13 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
     - Threat Name: Potential Lack of Input Validation for KeePassXC Desktop Application
     - Category:	Tampering
     - Description: Data flowing across User Input may be tampered with by an attacker. This may lead to a denial of service attack against KeePassXC Desktop Application or an elevation of privilege attack against KeePassXC Desktop Application or an information disclosure by KeePassXC Desktop Application. Failure to verify that input is as expected is a root cause of a very large number of exploitable issues. Consider all paths and the way they handle data. Verify that all input is verified for correctness using an approved list input validation approach.
-    - Existing Mitigations: KeePassXC does not validate user input. However, they never perform any checking against user input either. All input that is taken from the user gets hashed and compared to another hashed value. Hashed input can be considered as safe or sanitized input, since they only contain hex characters.
+    - Existing Mitigations: KeePassXC does not validate user input. However, they never perform any checking against user input either. All input that is taken from the user gets hashed and compared to another hashed value. Hashed input can be considered safe or sanitized since it only contains hex characters.
     - Notable Gap: None
 
 - *Threat ID: 32*
     - Threat Name: Spoofing the KeePassXC Desktop Application Process
     - Category:	Spoofing
-    - Description: KeePassXC Desktop Application may be spoofed by an attacker and this may lead to information disclosure by User. Consider using a standard authentication mechanism to identify the destination process.
+    - Description: KeePassXC Desktop Application may be spoofed by an attacker and this may lead to information disclosure by user. Consider using a standard authentication mechanism to identify the destination process.
     - Existing Mitigations: None
     - Notable Gap: **KeePassXC does not perform any process verification. An attacker could spoof the process and disclose sensitive information.**
 
@@ -250,13 +249,13 @@ To mitigate all of the highest impact threats, all generated threats from TMT of
 
 ## 4. Design Observations Summary
 
-The KeePassXC application is not a security oriented application, as has many notable gaps in the security features. 
+The KeePassXC application is not security-oriented, as it has many notable gaps in security features. 
 
-By outlining the overall data flow of KeePassXC and identifying potential trust boundaries, automatic threat generation revealed a number of potential security threats. In general, KeePassXC facilitates the transfer of data between one External Interactor (EI) and one Data Store (DS). Information is relayed to and from the application by the user. A single, local DS is located on the file system of the local computer.
+By outlining the overall data flow of KeePassXC and identifying potential trust boundaries, automatic threat generation revealed many potential security threats. KeePassXC facilitates data transfer between one External Interactor (EI) and one Data Store (DS). Information is relayed to and from the application by the user. A single, local DS is located on the local computer's file system.
 
-With these entities in mind, trust boundaries were established between the User and KeePassXC, and between KeePassXC and the local filesystem. From these trust boundaries, the Microsoft Threat Modeling tool recognized a large number of automatically generated threats. From these threats, 25 were evaluated by the team as High Priority.
+Trust boundaries were established between the KeePassXC, Users, and the local filesystem. From these trust boundaries, the Microsoft Threat Modeling tool recognized many automatically generated threats. Of these threats, 25 were assigned "High" priority by the team.
 
-From these 25 established high priority threats, mitigations were formulated and justified. From these justifications, KeePassXC was canvassed for comparative flaws. While KeePassXC generally ensures authentication and encryption security, there are a number of gaps that became evident throughout the analysis.
+From these 25 established high-priority threats, mitigations were formulated and justified. From these justifications, KeePassXC was analyzed for comparative flaws. While KeePassXC generally ensures authentication and encryption security, a number of gaps became evident throughout the analysis.
 
 ### 4.1 Notable Gaps:
 
@@ -264,9 +263,9 @@ From these 25 established high priority threats, mitigations were formulated and
   - The KeePassXC filesystem must be 100% intact -- otherwise, the application performs a hard crash.
   - KeePassXC does not perform any types of remediation actions on the filesystem.
 2. KeePassXC does not perform any logging or auditing.
-3. KeePassXC runs as a user process, and therefore has access to the user file system and retains that users permissions.
+3. KeePassXC runs as a user process and therefore has access to the user file system and retains that user's permissions.
 4. KeePassXC does nothing to prevent excessive resource consumption.
-5. In the case of using Windows Hello, a MFA authentication bypass exists within KeePassXC.
+5. When using Windows Hello, an MFA authentication bypass exists within KeePassXC.
 6. KeePassXC does not encrypt the datastream between the user and the application. 
 7. KeePassXC does not perform any process verification.
 
