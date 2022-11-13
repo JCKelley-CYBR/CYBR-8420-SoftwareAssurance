@@ -260,15 +260,15 @@ From these 25 established high priority threats, mitigations were formulated and
 
 ### 4.1 Notable Gaps:
 
-- KeePassXC does not perform file integrity checking.
+1. KeePassXC does not perform file integrity checking.
   - The KeePassXC filesystem must be 100% intact -- otherwise, the application performs a hard crash.
   - KeePassXC does not perform any types of remediation actions on the filesystem.
-- KeePassXC does not perform any logging or auditing.
-- KeePassXC runs as a user process, and therefore has access to the user file system and retains that users permissions.
-- KeePassXC does nothing to prevent excessive resource consumption.
-- In the case of using Windows Hello, a MFA authentication bypass exists within KeePassXC.
-- KeePassXC does not encrypt the datastream between the user and the application. 
-- KeePassXC does not perform any process verification.
+2. KeePassXC does not perform any logging or auditing.
+3. KeePassXC runs as a user process, and therefore has access to the user file system and retains that users permissions.
+4. KeePassXC does nothing to prevent excessive resource consumption.
+5. In the case of using Windows Hello, a MFA authentication bypass exists within KeePassXC.
+6. KeePassXC does not encrypt the datastream between the user and the application. 
+7. KeePassXC does not perform any process verification.
 
 ## 5. Team Reflection
 
