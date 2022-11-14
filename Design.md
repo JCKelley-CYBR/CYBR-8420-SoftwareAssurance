@@ -102,8 +102,8 @@ To analyze all of the threats generated from TMT of the highest priority, we div
   
 - *Threat ID: 14*
   - Threat Name: Data Flow Sniffing  
-  - Description: Data flowing across User Data may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow.
   - Category:	Information Disclosure
+  - Description: Data flowing across User Data may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow.
   - Existing mitigation: All data in motion is encrypted and with proper up-to-date versions of best practices.
   - Notable Gap: None.
   
@@ -260,8 +260,8 @@ From these 25 established high-priority threats, mitigations were formulated and
 ### 4.1 Notable Gaps:
 
 1. KeePassXC does not perform file integrity checking.
-  - The KeePassXC filesystem must be 100% intact -- otherwise, the application performs a hard crash.
-  - KeePassXC does not perform any types of remediation actions on the filesystem.
+  1. The KeePassXC filesystem must be 100% intact -- otherwise, the application performs a hard crash.
+  2. KeePassXC does not perform any types of remediation actions on the filesystem.
 2. KeePassXC does not perform any logging or auditing.
 3. KeePassXC runs as a user process and therefore has access to the user file system and retains that user's permissions.
 4. KeePassXC does nothing to prevent excessive resource consumption.
