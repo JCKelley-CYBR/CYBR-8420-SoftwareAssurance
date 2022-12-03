@@ -1,1 +1,3 @@
 # Embold Analysis - Findings
+
+## Vulnerabilities
