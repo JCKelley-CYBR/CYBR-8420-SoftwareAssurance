@@ -36,7 +36,13 @@ The automated scan strategy adopted by the team for this project was as follows:
     * [Results]()
 
 ### 4. Selected Common Weakness Enumerations (CWEs)
-
+* CWE 127 Buffer Under-Read
+* CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
+* CWE-261: Weak Encoding for Password
+* CWE-326: Inadequate Encryption Strength (Code and Documentation
+* CWE 362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+* CWE-532: Insertion of Sensitive Information into Log File
+* CWE 786 Access of Memory Location Before Start of Buffer
 ### 5. Summary of Findings
 
 ### 6. OSS Contributions
