@@ -44,7 +44,7 @@ The automated scan strategy adopted by the team for this project was as follows:
 * [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
 * [CWE-786 Access of Memory Location Before Start of Buffer](https://cwe.mitre.org/data/definitions/786.html)
 ### 5. Summary of Findings
-KeePassXC is a shit app
+During the initial code review activities, many tools were selected to carry out automated code analysis. It was found that some of these tools do not work well or not suited for KeePassXC. However, the team was able to find some CWEs of note, involving encryption, buffer issues, input, and shared resource access. Of all of the CWEs generated from automated and manual scans, seven were selected and split up amongst the team, these are listed in section four.
 ### 6. OSS Contributions
 
 ### Reflection
