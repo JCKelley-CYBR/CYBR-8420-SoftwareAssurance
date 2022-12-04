@@ -28,8 +28,6 @@ The automated scan strategy adopted by the team for this project was as follows:
     * [Results]()
 * [FlawFinder](https://dwheeler.com/flawfinder/)
     * [Results]()
-* [SonarQube](https://www.sonarqube.org/)
-    * [Results]()
 * [Github Scanner](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)
     * [Results]()
 * [Embold](https://app.embold.io)
@@ -38,6 +36,13 @@ The automated scan strategy adopted by the team for this project was as follows:
 ### 4. Selected Common Weakness Enumerations (CWEs)
 * [CWE-127 Buffer Under-Read](https://cwe.mitre.org/data/definitions/127.html)
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
+   * **Files Analyzed
+      * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+   * **Automated Scan Issues:** No automated scan issues found.
+   * **Code Review Summary:** KeePassXC minimizes the exposure of sensitive information to an unauthorized actor
+      * Since there is no logging, there is no way that sensitive information is presented to unauthorized actors
+      * KeePassXC has strong encryption, using 256-bit AES.
+
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
 * [CWE-326: Inadequate Encryption Strength (Code and Documentation](https://cwe.mitre.org/data/definitions/326.html)
 * [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
