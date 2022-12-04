@@ -28,8 +28,6 @@ The automated scan strategy adopted by the team for this project was as follows:
     * [Results]()
 * [FlawFinder](https://dwheeler.com/flawfinder/)
     * [Results]()
-* [SonarQube](https://www.sonarqube.org/)
-    * [Results]()
 * [Github Scanner](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)
     * [Results]()
 * [Embold](https://app.embold.io)
@@ -59,6 +57,15 @@ The automated scan strategy adopted by the team for this project was as follows:
     * **Code Review Summary:** The automated scans identified large vulnerability in the handling of indexs. In this case the amount of memory allocated to the buffer, and allowing access to memory locations before the start of the buffer. If this threat were to be realized by an attacker it could open up KeePassXC to potential data leakage, or crashing. The function this code was found in is used for encoding QByteArray& data. Fortunately, this function is not utilized anywhere in the repository for any sort of encoding. This vulnerability is not a threat to KeePassXC, however, we do recommend if it is not in use to remove it from the repository.
     
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
+   * **Description** 
+      * CWE-200: or Exposure of Sensitive Information to an Unauthorized Actor, is a weakness that occurs when an application or system exposes sensitive information to unauthorized users or systems. This can happen when an application or system fails to properly protect sensitive information, such as by not encrypting data or by storing it in an insecure location. If KeePassXC, a password manager, were to suffer from this weakness, it could potentially expose sensitive information such as passwords or other sensitive data to unauthorized users or systems. This could allow attackers to gain access to a user's password database, potentially compromising the security of their online accounts. It is important for KeePassXC to properly protect sensitive information and ensure that it is not exposed to unauthorized actors. This can be achieved through the use of strong encryption and secure storage of sensitive data.
+   * **Files Analyzed**
+      * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+   * **Automated Scan Issues:** No automated scan issues found.
+   * **Code Review Summary:** KeePassXC minimizes the exposure of sensitive information to an unauthorized actor
+      * Since there is no logging, there is no way that sensitive information is presented to unauthorized actors
+      * KeePassXC has strong encryption, using 256-bit AES.
+
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
 * [CWE-326: Inadequate Encryption Strength (Code and Documentation](https://cwe.mitre.org/data/definitions/326.html)
 * [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
