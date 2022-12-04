@@ -41,6 +41,15 @@ The automated scan strategy adopted by the team for this project was as follows:
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
 * [CWE-326: Inadequate Encryption Strength (Code and Documentation](https://cwe.mitre.org/data/definitions/326.html)
 * [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
+   * **Description:**
+      * CWE-362, or Concurrent Execution using Shared Resource with Improper Synchronization, is a weakness that exists when an application allows multiple threads or     processes to access or modify a shared resource without proper synchronization. This can lead to race conditions, where two or more threads or processes attempt to access or modify the same resource simultaneously, potentially leading to unpredictable or inconsistent behavior. In the case of KeePassXC, a password manager, this weakness could potentially allow multiple threads or processes to access or modify a user's password database at the same time, potentially leading to data corruption or other unpredictable behavior. This could potentially result in a user being unable to access their password database, or potentially even losing access to their sensitive information. To prevent this, KeePassXC should properly synchronize access to shared resources to ensure that only one thread or process can access or modify the password database at a time. This can help to prevent race conditions and ensure that the password database remains consistent and reliable.
+   * **Related CWE:**
+      * CWE-367, Time-of-check Time-of-use (TOCTOU) Race Condition, The software checks the state of a resource before using that resource, but the resource's state can change between the check and the use in a way that invalidates the results of the check. This can cause the software to perform invalid actions when the resource is in an unexpected state. This weakness can be security-relevant when an attacker can influence the state of the resource between check and use. This can happen with shared resources such as files, memory, or even variables in multithreaded programs.
+   * **Files Analyzed**
+      * [DBusDispatch.ccp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/fdosecrets/dbus/DBusDispatch.cpp)
+   * **Automated Scan Issues:** Flawfinder reported DBusDispatch.cpp as vullnerable to CEW-362 
+      * 
+   * **Code Review Summary:** 
 * [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
 * [CWE-786 Access of Memory Location Before Start of Buffer](https://cwe.mitre.org/data/definitions/786.html)
 ### 5. Summary of Findings
