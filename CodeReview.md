@@ -36,7 +36,9 @@ The automated scan strategy adopted by the team for this project was as follows:
 ### 4. Selected Common Weakness Enumerations (CWEs)
 * [CWE-127 Buffer Under-Read](https://cwe.mitre.org/data/definitions/127.html)
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
-   * **Files Analyzed
+   * **Description** 
+      * CWE-200: or Exposure of Sensitive Information to an Unauthorized Actor, is a weakness that occurs when an application or system exposes sensitive information to unauthorized users or systems. This can happen when an application or system fails to properly protect sensitive information, such as by not encrypting data or by storing it in an insecure location. If KeePassXC, a password manager, were to suffer from this weakness, it could potentially expose sensitive information such as passwords or other sensitive data to unauthorized users or systems. This could allow attackers to gain access to a user's password database, potentially compromising the security of their online accounts. It is important for KeePassXC to properly protect sensitive information and ensure that it is not exposed to unauthorized actors. This can be achieved through the use of strong encryption and secure storage of sensitive data.
+   * **Files Analyzed**
       * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
    * **Automated Scan Issues:** No automated scan issues found.
    * **Code Review Summary:** KeePassXC minimizes the exposure of sensitive information to an unauthorized actor
