@@ -42,6 +42,7 @@ The automated scan strategy adopted by the team for this project was as follows:
         
         * CWE-786: Access of Memory Location Before Start of Buffer: is a weakness that occurs when a KeePassXC attempts to access a memory location before the start of a buffer. This can happen when the KeePassXC attempts to read or write data to a memory location that is outside the bounds of the allocated memory buffer.
     * **Files Analyzed**
+        * [Base32.h](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/core/Base32.h#L35)
         * [Base32.cpp](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/core/Base32.cpp#L211)
     * **Automated Scan Issues:** Embold reported Base32.cpp as vulnerable to CWE-127 & CWE-786 as a **Critical Vulnerability**. 
         * **Code Snippet:**
