@@ -36,13 +36,35 @@ The automated scan strategy adopted by the team for this project was as follows:
     * [Results]()
 
 ### 4. Selected Common Weakness Enumerations (CWEs)
-* [CWE-127 Buffer Under-Read](https://cwe.mitre.org/data/definitions/127.html)
+* [**CWE-127 Buffer Under-Read**](https://cwe.mitre.org/data/definitions/127.html) & [**CWE-786 Access of Memory Location Before Start of Buffer**](https://cwe.mitre.org/data/definitions/786.html)
+    * **Descriptions:**
+        * CWE-127: Buffer Under-Read: is a weakness that occurs when a KeePassXC attempts to read data from a buffer that has been under-allocated, meaning that there is not enough memory allocated to the buffer to store the data that is being read.
+        
+        * CWE-786: Access of Memory Location Before Start of Buffer: is a weakness that occurs when a KeePassXC attempts to access a memory location before the start of a buffer. This can happen when the KeePassXC attempts to read or write data to a memory location that is outside the bounds of the allocated memory buffer.
+    * **Files Analyzed**
+        * [Base32.cpp](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/core/Base32.cpp#L211)
+    * **Automated Scan Issues:** Embold reported Base32.cpp as vulnerable to CWE-127 & CWE-786 as a **Critical Vulnerability**. 
+        * **Code Snippet:**
+            ```C++
+            while (n >= 0) {
+                int index = (quantum & mask) >> n;
+                Q_ASSERT(0 <= index && index <= 31);
+                encodedData[o++] = alphabet[index];
+                mask >>= 5;
+                n -= 5;
+            }
+            ```
+        * **Scan Description:** Either the condition '0<=index' is redundant or the array 'alphabet[33]' is accessed at index -1, which is out of bounds. Array index -1 is out of bounds.
+    * **Code Review Summary:** The automated scans identified large vulnerability in the handling of indexs. In this case the amount of memory allocated to the buffer, and allowing access to memory locations before the start of the buffer. If this threat were to be realized by an attacker it could open up KeePassXC to potential data leakage, or crashing. The function this code was found in is used for encoding QByteArray& data. This function is used in the following files:
+        * [Item.cpp](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/fdosecrets/objects/Item.cpp#L280)
+            * This file uses the encode function to encode the users secret key. This key is used to encrypt the users password. If this key were to be leaked, or the encryption were to fail, the users password would be exposed.
+    
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
 * [CWE-326: Inadequate Encryption Strength (Code and Documentation](https://cwe.mitre.org/data/definitions/326.html)
 * [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
 * [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
-* [CWE-786 Access of Memory Location Before Start of Buffer](https://cwe.mitre.org/data/definitions/786.html)
+
 ### 5. Summary of Findings
 KeePassXC is a shit app
 ### 6. OSS Contributions
