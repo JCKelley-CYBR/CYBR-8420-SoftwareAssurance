@@ -24,8 +24,8 @@ The automated scan strategy adopted by the team for this project was as follows:
 3. After conducting all five automated scans, each group member will evaluate all automated scans for correlation to the selected CWEs. Any issues, or new discoverys, will be evaluated in our findings.
 
 #### 3.1 Selected Automated Scan Tools
-* [DeepScan.io](https://deepscan.io/)
-    * [Results]()
+* [CPPCheck](http://cppcheck.net/)
+    * [Results](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/CodeReview/CPPCheck/README.md)
 * [FlawFinder](https://dwheeler.com/flawfinder/)
     * [Results]()
 * [SonarQube](https://www.sonarqube.org/)
@@ -36,15 +36,31 @@ The automated scan strategy adopted by the team for this project was as follows:
     * [Results]()
 
 ### 4. Selected Common Weakness Enumerations (CWEs)
-* CWE 127 Buffer Under-Read
+* CWE-127: Buffer Under-Read
 * CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
 * CWE-261: Weak Encoding for Password
 * CWE-326: Inadequate Encryption Strength (Code and Documentation
-* CWE 362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+* CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
 * CWE-532: Insertion of Sensitive Information into Log File
-* CWE 786 Access of Memory Location Before Start of Buffer
+* CWE-786: Access of Memory Location Before Start of Buffer
 ### 5. Summary of Findings
-
+* [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
+    * **Files Analyzed:**
+        * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+        * [CryptoHash.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/CryptoHash.cpp)
+        * [SymmetricCipher.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/SymmetricCipher.cpp)
+        * [Argon2Kdf.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/kdf/Argon2Kdf.cpp)
+    * **Automated Scan Issues:** There were no relevant issues found in the automated scans. 
+    * **Code Review Summary:** We have concluded that KeePassXC properly encodes their passwords. They use the AES256 or TwoFish cipher with a configurable key transformation for the  master password to ensure proper security for the passwords. This process is detailed [here](https://keepassxc.org/docs/#faq-security-why-pm) and is implemented correctly when looking at their code. Additionally, for hashing they implement both SHA256 and SHA512 for the user to decide upon.
+* [CWE-326: Inadequate Encryption Strength](https://cwe.mitre.org/data/definitions/326.html)
+     * **Files Analyzed:**
+        * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+        * [CryptoHash.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/CryptoHash.cpp)
+        * [SymmetricCipher.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/SymmetricCipher.cpp)
+        * [Argon2Kdf.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/kdf/Argon2Kdf.cpp)
+        * [Random.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Random.cpp)
+    * **Automated Scan Issues:** There were no relevant issues found in the automated scans.
+    * **Code Review Summary:** The encryption standards used for KeePassXC are up to current standards at minimum and have no found vulnerabilities in the code after manual review. The application uses AES256 as a default encryption method. Further, they allow configuration to use the TwoFish block cipher. Both of these are implemented properly in the code. Lastly, for encryption of the vault, they use a configurable key transformation in order to provide extra security for the user to fit to their needs. This function is also properly implemented.
 ### 6. OSS Contributions
 
 ### Reflection
