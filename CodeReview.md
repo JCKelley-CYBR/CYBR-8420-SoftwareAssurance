@@ -36,15 +36,15 @@ The automated scan strategy adopted by the team for this project was as follows:
     * [Results]()
 
 ### 4. Selected Common Weakness Enumerations (CWEs)
-* CWE 127 Buffer Under-Read
-* CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
-* CWE-261: Weak Encoding for Password
-* CWE-326: Inadequate Encryption Strength (Code and Documentation
-* CWE 362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
-* CWE-532: Insertion of Sensitive Information into Log File
-* CWE 786 Access of Memory Location Before Start of Buffer
+* [CWE-127 Buffer Under-Read](https://cwe.mitre.org/data/definitions/127.html)
+* [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
+* [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
+* [CWE-326: Inadequate Encryption Strength (Code and Documentation](https://cwe.mitre.org/data/definitions/326.html)
+* [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
+* [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
+* [CWE-786 Access of Memory Location Before Start of Buffer](https://cwe.mitre.org/data/definitions/786.html)
 ### 5. Summary of Findings
-
+KeePassXC is a shit app
 ### 6. OSS Contributions
 
 ### Reflection
