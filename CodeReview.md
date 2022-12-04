@@ -55,9 +55,7 @@ The automated scan strategy adopted by the team for this project was as follows:
             }
             ```
         * **Scan Description:** Either the condition '0<=index' is redundant or the array 'alphabet[33]' is accessed at index -1, which is out of bounds. Array index -1 is out of bounds.
-    * **Code Review Summary:** The automated scans identified large vulnerability in the handling of indexs. In this case the amount of memory allocated to the buffer, and allowing access to memory locations before the start of the buffer. If this threat were to be realized by an attacker it could open up KeePassXC to potential data leakage, or crashing. The function this code was found in is used for encoding QByteArray& data. This function is used in the following files:
-        * [Item.cpp](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/fdosecrets/objects/Item.cpp#L280)
-            * This file uses the encode function to encode the users secret key. This key is used to encrypt the users password. If this key were to be leaked, or the encryption were to fail, the users password would be exposed.
+    * **Code Review Summary:** The automated scans identified large vulnerability in the handling of indexs. In this case the amount of memory allocated to the buffer, and allowing access to memory locations before the start of the buffer. If this threat were to be realized by an attacker it could open up KeePassXC to potential data leakage, or crashing. The function this code was found in is used for encoding QByteArray& data. Fortunately, this function is not utilized anywhere in the repository for any sort of encoding. This vulnerability is not a threat to KeePassXC, however, we do recommend if it is not in use to remove it from the repository.
     
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
