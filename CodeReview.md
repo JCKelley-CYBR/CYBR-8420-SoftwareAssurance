@@ -18,6 +18,13 @@ NOICE
 
 ### 4. Selected Common Weakness Enumerations (CWEs)
 
+* [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
+
+CWE-532: Insertion of Sensitive Information into Log File is a type of Improper Authorization weakness that occurs when an application or system writes sensitive information, such as passwords or other sensitive data, to a log file. This can allow attackers who have access to the log file to easily obtain sensitive information, potentially allowing them to gain unauthorized access to sensitive data or systems.
+
+In the context of KeePassXC, a password manager, CWE-532: Insertion of Sensitive Information into Log File could have a significant impact. If KeePassXC writes sensitive information, such as user passwords, to a log file, and an attacker is able to gain access to that log file, they could potentially obtain sensitive information and use it to gain unauthorized access to a user's password database. This could allow the attacker to gain access to sensitive information such as passwords, potentially allowing them to perform unauthorized actions or gain access to other sensitive data. To prevent this weakness, KeePassXC should ensure that it does not write sensitive information, such as user passwords, to log files, and should properly secure any log files that are created to prevent unauthorized access.
+
+
 ### 5. Summary of Findings
 
 ### 6. OSS Contributions
