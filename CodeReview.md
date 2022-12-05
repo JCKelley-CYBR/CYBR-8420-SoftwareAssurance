@@ -82,7 +82,8 @@ The automated scan strategy adopted by the team for this project was as follows:
          "fmt"
          ```
    * **Code Review Summary:** Appears to be use of SHA-1 (a weak hashing algorithm).
-      * If there is SHA-1 used, this represents a huge security issue with KeePassXC
+      * If there is SHA-1 used, this could be a secuirty issue
+      * The context around the code snippet reveals that this SHA-1 hash is just used in the process of recovering a database after a hardware key is lost, it is not used to guarantee integrity or uniquness
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
     * **Files Analyzed:**
         * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
