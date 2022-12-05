@@ -131,8 +131,9 @@ From the Code Review carried out:
 More Stuff
 
 ### 6. OSS Contributions
+Given the continued work on this open source software assurance program, the following open sour project contributions and interactions are deemed to be noteworthy to KeePassXC. Reaffirmation and validation concerns regarding the hashing and encryption used by the application. The communication of findings discovered during the course of the project that is relevant to KeePassXC. The resolution of buffer under-reads that could lead to crashes and vulnerabilities. As well as a resolution to the race conditions in some parts of the code. KeePassXC is a safe and secure password manager that provides adequate security.
 
-### Reflection
+### 7. Reflection
 Working with Josh, Aaron, Mitchell, Neil, and Danee has been a pleasure. Each member of the team has brought their own unique skills and perspectives to the table, resulting in a dynamic and productive work environment.
 
 Josh is a strong leader who is able to clearly articulate our team's goals and objectives, and he is adept at delegating tasks and responsibilities to ensure that we are all working towards the same end. His attention to detail and commitment to excellence are impressive, and he has been a valuable asset to our team.
