@@ -88,6 +88,13 @@ The automated scan strategy adopted by the team for this project was as follows:
 * [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
 * [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
 
+* [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
+
+CWE-532: Insertion of Sensitive Information into Log File is a type of Improper Authorization weakness that occurs when an application or system writes sensitive information, such as passwords or other sensitive data, to a log file. This can allow attackers who have access to the log file to easily obtain sensitive information, potentially allowing them to gain unauthorized access to sensitive data or systems.
+
+In the context of KeePassXC, a password manager, CWE-532: Insertion of Sensitive Information into Log File could have a significant impact. If KeePassXC writes sensitive information, such as user passwords, to a log file, and an attacker is able to gain access to that log file, they could potentially obtain sensitive information and use it to gain unauthorized access to a user's password database. This could allow the attacker to gain access to sensitive information such as passwords, potentially allowing them to perform unauthorized actions or gain access to other sensitive data. KeePassXC does not create or store any log files, so there is no risk of CWE-532 occuring in the application.
+
+
 ### 5. Summary of Findings
 During the initial code review activities, many tools were selected to carry out automated code analysis. It was found that some of these tools do not work well or not suited for KeePassXC. However, the team was able to find some CWEs of note, involving encryption, buffer issues, input, and shared resource access. Of all of the CWEs generated from automated and manual scans, seven were selected and split up amongst the team, these are listed in section four.
 
