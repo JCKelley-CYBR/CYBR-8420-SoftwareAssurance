@@ -122,13 +122,16 @@ During the initial code review activities, many tools were selected to carry out
 * [**CWE-786 Access of Memory Location Before Start of Buffer**](https://cwe.mitre.org/data/definitions/786.html)
 
 From the Code Review carried out:
-1. 
-2. 
-3. 
-4. 
-5. 
+1. KeePassXC has a sufficient implementation of modern cryptographic standards. The application uses AES256 and TwoFish ciphers, and has SHA256 and SHA512 hashing standards.
+2. KeePassXC implements a strong and sufficiently random pseudo random number generator with the Botan library. 
+3. KeePassXC uses secure logging practices by never logging sensitive information. ;)
+4. KeePassXC has a buffer under-read vulnerability. While it is not used in critical points of the application, it could cause unintended behavior in the application.
+5. KeePassXC uses shared resources, and if the synchronization is not set properly, a race condition can present itself. This can cause unexpected behavior in the application or potential loss of availability.
 
-More Stuff
+As far as encryption is concerned, KeePassXC fulfills its job as a password manager, providing strong and proper encryption for users on the database in use. With regards to vulnerabilities found during th code review, that remained relatively minimal. The buffer under-read vulnerability found was never executed during security critical times, and the most likely behavior stemming from it would be a crash. Lastly, the shared resources issue was never used during security critical points, only ever in the GUI, therefore being a convenience issue over a security issue.
+
+Overall, our findings for KeePassXC showed that it is a generally safe and stable codebase. From proper coding practices, to the relatively small amount of issues found, the application stands firm as a safe application to use for a password manager. While the few problems we found have little mitigation, they are not present in security functions, meaning the assurance is high and risk is low for any entity implementing this application. 
+
 
 ### 6. OSS Contributions
 
