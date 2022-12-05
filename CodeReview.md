@@ -59,14 +59,31 @@ The automated scan strategy adopted by the team for this project was as follows:
     
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
    * **Description** 
-      * CWE-200: or Exposure of Sensitive Information to an Unauthorized Actor, is a weakness that occurs when an application or system exposes sensitive information to unauthorized users or systems. This can happen when an application or system fails to properly protect sensitive information, such as by not encrypting data or by storing it in an insecure location. If KeePassXC, a password manager, were to suffer from this weakness, it could potentially expose sensitive information such as passwords or other sensitive data to unauthorized users or systems. This could allow attackers to gain access to a user's password database, potentially compromising the security of their online accounts. It is important for KeePassXC to properly protect sensitive information and ensure that it is not exposed to unauthorized actors. This can be achieved through the use of strong encryption and secure storage of sensitive data.
+      * CWE-200: Exposure of Sensitive Information to an Unauthorized Actor, is a weakness that occurs when an application or system exposes sensitive information to unauthorized users or systems. This can happen when an application or system fails to properly protect sensitive information, such as by not encrypting data or by storing it in an insecure location. If KeePassXC, a password manager, were to suffer from this weakness, it could potentially expose sensitive information such as passwords or other sensitive data to unauthorized users or systems. This could allow attackers to gain access to a user's password database, potentially compromising the security of their online accounts. It is important for KeePassXC to properly protect sensitive information and ensure that it is not exposed to unauthorized actors. This can be achieved through the use of strong encryption and secure storage of sensitive data.
    * **Files Analyzed**
       * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
-   * **Automated Scan Issues:** No automated scan issues found.
-   * **Code Review Summary:** KeePassXC minimizes the exposure of sensitive information to an unauthorized actor
+   * **Automated Scan Issues:** No automated scan issues found for `Crypto.cpp`.
+   * **Code Review Summary:** KeePassXC minimizes the exposure of sensitive information to an unauthorized actor. 
       * Since there is no logging, there is no way that sensitive information is presented to unauthorized actors
       * KeePassXC has strong encryption, using 256-bit AES.
+      * There is a possiblity, since SHA-1 is imported into the main.go file, there is leakage of senstive information. This is related to another CWE, CWE-327.
 
+* [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)
+   * **Description**
+      * CWE-327: A type of weakness or vulnerability in a system's encryption. It occurs when a system uses a cryptographic algorithm that is known to be insecure or has been broken by attackers. This can happen if the system uses an outdated or weak encryption algorithm, or if it has not been implemented properly. Using a broken or risky cryptographic algorithm can put the system and its users at risk of having their sensitive information, such as passwords, stolen by attackers. It is important for systems to use strong, secure encryption algorithms to protect against this type of vulnerability.
+      
+   * **Files Analyzed**
+      * [main.go](https://github.com/keepassxreboot/keepassxc/blob/develop/utils/keepassxc-cr-recovery/main.go)
+      * **Automated Scan Issues** Issue found with importing crypto/sha1 into `main.go` **Critical Vulnerability**
+      * **Code Snippet:**
+         ```go
+         "crypto/hmac"
+         "crypto/sha1"
+         "fmt"
+         ```
+   * **Code Review Summary:** Appears to be use of SHA-1 (a weak hashing algorithm).
+      * If there is SHA-1 used, this could be a secuirty issue
+      * The context around the code snippet reveals that this SHA-1 hash is just used in the process of recovering a database after a hardware key is lost, it is not used to guarantee integrity or uniquness
 * [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
     * **Files Analyzed:**
         * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
