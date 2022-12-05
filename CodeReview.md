@@ -27,7 +27,7 @@ The automated scan strategy adopted by the team for this project was as follows:
 * [DeepScan.io](https://deepscan.io/)
     * [Results]()
 * [FlawFinder](https://dwheeler.com/flawfinder/)
-    * [Results]()
+    * [Results](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/CodeReview/FlawFinder/FlawfinderResults.csv)
 * [SonarQube](https://www.sonarqube.org/)
     * [Results]()
 * [Github Scanner](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)
