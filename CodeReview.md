@@ -17,6 +17,7 @@ The manual code review strategy for KeePassXC is as follows:
 3. Automated tools will then be employed against the KeePassXC respoitory (develope branch).
 4. Selected CWEs will dictate the areas of concern from the automated test results.
 5. Results will be investigated related to the selected CWEs and the automated scan results.
+
 ### 3. Automated Scan Strategy
 The automated scan strategy adopted by the team for this project was as follows:
 1. Each member uses an unique automated scanning tool on the KeePassXC repository.
@@ -24,22 +25,84 @@ The automated scan strategy adopted by the team for this project was as follows:
 3. After conducting all five automated scans, each group member will evaluate all automated scans for correlation to the selected CWEs. Any issues, or new discoverys, will be evaluated in our findings.
 
 #### 3.1 Selected Automated Scan Tools
-* [DeepScan.io](https://deepscan.io/)
-    * [Results]()
+* [CPPCheck](http://cppcheck.net/)
+    * [Results](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/CodeReview/CPPCheck/README.md)
 * [FlawFinder](https://dwheeler.com/flawfinder/)
     * [Results](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/CodeReview/FlawFinder/FlawfinderResults.csv)
-* [SonarQube](https://www.sonarqube.org/)
-    * [Results]()
 * [Github Scanner](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)
-    * [Results]()
+    * [Results](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/tree/main/CodeReview/GitHubScanner)
 * [Embold](https://app.embold.io)
-    * [Results]()
+    * [Results](https://github.com/JCKelley-CYBR/CYBR-8420-SoftwareAssurance/blob/main/CodeReview/Embold/README.md)
 
 ### 4. Selected Common Weakness Enumerations (CWEs)
-* [CWE-127 Buffer Under-Read](https://cwe.mitre.org/data/definitions/127.html)
-* [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
-* [CWE-261: Weak Encoding for Password](https://cwe.mitre.org/data/definitions/261.html)
-* [CWE-326: Inadequate Encryption Strength (Code and Documentation](https://cwe.mitre.org/data/definitions/326.html)
+* [**CWE-127 Buffer Under-Read**](https://cwe.mitre.org/data/definitions/127.html) & [**CWE-786 Access of Memory Location Before Start of Buffer**](https://cwe.mitre.org/data/definitions/786.html)
+    * **Descriptions:**
+        * CWE-127: Buffer Under-Read: is a weakness that occurs when a KeePassXC attempts to read data from a buffer that has been under-allocated, meaning that there is not enough memory allocated to the buffer to store the data that is being read.
+        
+        * CWE-786: Access of Memory Location Before Start of Buffer: is a weakness that occurs when a KeePassXC attempts to access a memory location before the start of a buffer. This can happen when the KeePassXC attempts to read or write data to a memory location that is outside the bounds of the allocated memory buffer.
+    * **Files Analyzed**
+        * [Base32.h](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/core/Base32.h#L35)
+        * [Base32.cpp](https://github.com/keepassxreboot/keepassxc/blob/12be175d583fbfac5a7b6b250a3bb5f792925285/src/core/Base32.cpp#L211)
+    * **Automated Scan Issues:** Embold reported Base32.cpp as vulnerable to CWE-127 & CWE-786 as a **Critical Vulnerability**. 
+        * **Code Snippet:**
+            ```C++
+            while (n >= 0) {
+                int index = (quantum & mask) >> n;
+                Q_ASSERT(0 <= index && index <= 31);
+                encodedData[o++] = alphabet[index];
+                mask >>= 5;
+                n -= 5;
+            }
+            ```
+        * **Scan Description:** Either the condition '0<=index' is redundant or the array 'alphabet[33]' is accessed at index -1, which is out of bounds. Array index -1 is out of bounds.
+    * **Code Review Summary:** The automated scans identified large vulnerability in the handling of indexs. In this case the amount of memory allocated to the buffer, and allowing access to memory locations before the start of the buffer. If this threat were to be realized by an attacker it could open up KeePassXC to potential data leakage, or crashing. The function this code was found in is used for encoding QByteArray& data. Fortunately, this function is not utilized anywhere in the repository for any sort of encoding. This vulnerability is not a threat to KeePassXC, however, we do recommend if it is not in use to remove it from the repository.
+    
+* [**CWE-200: Exposure of Sensitive Information to an Unauthorized Actor**](https://cwe.mitre.org/data/definitions/200.html)
+   * **Description** 
+      * CWE-200: Exposure of Sensitive Information to an Unauthorized Actor, is a weakness that occurs when an application or system exposes sensitive information to unauthorized users or systems. This can happen when an application or system fails to properly protect sensitive information, such as by not encrypting data or by storing it in an insecure location. If KeePassXC, a password manager, were to suffer from this weakness, it could potentially expose sensitive information such as passwords or other sensitive data to unauthorized users or systems. This could allow attackers to gain access to a user's password database, potentially compromising the security of their online accounts. It is important for KeePassXC to properly protect sensitive information and ensure that it is not exposed to unauthorized actors. This can be achieved through the use of strong encryption and secure storage of sensitive data.
+   * **Files Analyzed**
+      * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+   * **Automated Scan Issues:** No automated scan issues found for `Crypto.cpp`.
+   * **Code Review Summary:** KeePassXC minimizes the exposure of sensitive information to an unauthorized actor. 
+      * Since there is no logging, there is no way that sensitive information is presented to unauthorized actors
+      * KeePassXC has strong encryption, using 256-bit AES.
+      * There is a possiblity, since SHA-1 is imported into the main.go file, there is leakage of senstive information. This is related to another CWE, CWE-327.
+
+* [**CWE-261: Weak Encoding for Password**](https://cwe.mitre.org/data/definitions/261.html)
+    * **Files Analyzed:**
+        * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+        * [CryptoHash.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/CryptoHash.cpp)
+        * [SymmetricCipher.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/SymmetricCipher.cpp)
+        * [Argon2Kdf.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/kdf/Argon2Kdf.cpp)
+    * **Automated Scan Issues:** There were no relevant issues found in the automated scans. 
+    * **Code Review Summary:** We have concluded that KeePassXC properly encodes their passwords. They use the AES256 or TwoFish cipher with a configurable key transformation for the  master password to ensure proper security for the passwords. This process is detailed [here](https://keepassxc.org/docs/#faq-security-why-pm) and is implemented correctly when looking at their code. Additionally, for hashing they implement both SHA256 and SHA512 for the user to decide upon.
+
+* [**CWE-326: Inadequate Encryption Strength**](https://cwe.mitre.org/data/definitions/326.html)
+     * **Files Analyzed:**
+        * [Crypto.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Crypto.cpp)
+        * [CryptoHash.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/CryptoHash.cpp)
+        * [SymmetricCipher.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/SymmetricCipher.cpp)
+        * [Argon2Kdf.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/kdf/Argon2Kdf.cpp)
+        * [Random.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/crypto/Random.cpp)
+    * **Automated Scan Issues:** There were no relevant issues found in the automated scans.
+    * **Code Review Summary:** The encryption standards used for KeePassXC are up to current standards at minimum and have no found vulnerabilities in the code after manual review. The application uses AES256 as a default encryption method. Further, they allow configuration to use the TwoFish block cipher. Both of these are implemented properly in the code. Lastly, for encryption of the vault, they use a configurable key transformation in order to provide extra security for the user to fit to their needs. This function is also properly implemented.
+* [**CWE-327: Use of a Broken or Risky Cryptographic Algorithm**](https://cwe.mitre.org/data/definitions/327.html)
+   * **Description**
+      * CWE-327: A type of weakness or vulnerability in a system's encryption. It occurs when a system uses a cryptographic algorithm that is known to be insecure or has been broken by attackers. This can happen if the system uses an outdated or weak encryption algorithm, or if it has not been implemented properly. Using a broken or risky cryptographic algorithm can put the system and its users at risk of having their sensitive information, such as passwords, stolen by attackers. It is important for systems to use strong, secure encryption algorithms to protect against this type of vulnerability.
+      
+   * **Files Analyzed**
+      * [main.go](https://github.com/keepassxreboot/keepassxc/blob/develop/utils/keepassxc-cr-recovery/main.go)
+      * **Automated Scan Issues** Issue found with importing crypto/sha1 into `main.go` **Critical Vulnerability**
+      * **Code Snippet:**
+         ```go
+         "crypto/hmac"
+         "crypto/sha1"
+         "fmt"
+         ```
+   * **Code Review Summary:** Appears to be use of SHA-1 (a weak hashing algorithm).
+      * If there is SHA-1 used, this could be a secuirty issue
+      * The context around the code snippet reveals that this SHA-1 hash is just used in the process of recovering a database after a hardware key is lost, it is not used to guarantee integrity or uniqueness
+
 * [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
    * **Description:**
       * CWE-362, or Concurrent Execution using Shared Resource with Improper Synchronization, is a weakness that exists when an application allows multiple threads or processes to access or modify a shared resource without proper synchronization. This can lead to race conditions, where two or more threads or processes attempt to access or modify the same resource simultaneously, potentially leading to unpredictable or inconsistent behavior. In the case of KeePassXC, a password manager, this weakness could potentially allow multiple threads or processes to access or modify a user's password database at the same time, potentially leading to data corruption or other unpredictable behavior. This could potentially result in a user being unable to access their password database, or potentially even losing access to their sensitive information. To prevent this, KeePassXC should properly synchronize access to shared resources to ensure that only one thread or process can access or modify the password database at a time. This can help to prevent race conditions and ensure that the password database remains consistent and reliable.
@@ -50,13 +113,39 @@ The automated scan strategy adopted by the team for this project was as follows:
       * [FileWatcher.cpp](https://github.com/keepassxreboot/keepassxc/blob/develop/src/core/FileWatcher.cpp)
    * **Automated Scan Issues:** Flawfinder reported a number of race conditions present with the inclusion of the Qt framwork for their GUI.
    * **Code Review Summary:** The exploitation of Concurrent Execution using Shared Resource with Improper Synchronization may cause inconsistencies in the functioning of the program, however as the issues are only present with the implimentation of the Qt framework, it only presents an inconvenice for the user and does not present a security issue associated with accessing or modifying the Database.
-* [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)
-* [CWE-786 Access of Memory Location Before Start of Buffer](https://cwe.mitre.org/data/definitions/786.html)
-### 5. Summary of Findings
-KeePassXC is a shit app
-### 6. OSS Contributions
 
-### Reflection
+* [**CWE-532: Insertion of Sensitive Information into Log File**](https://cwe.mitre.org/data/definitions/532.html)
+    * **Description:** CWE-532: A type of weakness that occurs when an application or system logs sensitive information, such as passwords or other authentication credentials. This can happen when an application or system fails to properly protect sensitive information, such as by not encrypting data or by storing it in an insecure location. 
+        
+    * **Code Review Summary:** If KeePassXC, a password manager, were to suffer from this weakness, it could potentially expose sensitive information such as passwords or other sensitive data to unauthorized users or systems. This could allow attackers to gain access to a user's password database, potentially compromising the security of their online accounts. It is important for KeePassXC to properly protect sensitive information and ensure that it is not exposed to unauthorized actors. This can be achieved through the use of strong encryption and secure storage of sensitive data.
+
+### 5. Summary of Findings
+During the initial code review activities, many tools were selected to carry out automated code analysis. It was found that some of these tools do not work well or not suited for KeePassXC. However, the team was able to find some CWEs of note, involving encryption, buffer issues, input, and shared resource access. Of all of the CWEs generated from automated and manual scans, seven were selected and split up amongst the team, these are listed in section four. The selected CWEs are as follows:
+* [**CWE-127 Buffer Under-Read**](https://cwe.mitre.org/data/definitions/127.html)
+* [**CWE-200: Exposure of Sensitive Information to an Unauthorized Actor**](https://cwe.mitre.org/data/definitions/200.html)
+* [**CWE-261: Weak Encoding for Password**](https://cwe.mitre.org/data/definitions/261.html)
+* [**CWE-326: Inadequate Encryption Strength**](https://cwe.mitre.org/data/definitions/326.html)
+* [**CWE-327: Use of a Broken or Risky Cryptographic Algorithm**](https://cwe.mitre.org/data/definitions/327.html)
+* [**CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')**](https://cwe.mitre.org/data/definitions/362.html)
+* [**CWE-532: Insertion of Sensitive Information into Log File**](https://cwe.mitre.org/data/definitions/532.html)
+* [**CWE-786 Access of Memory Location Before Start of Buffer**](https://cwe.mitre.org/data/definitions/786.html)
+
+From the Code Review carried out:
+1. KeePassXC has a sufficient implementation of modern cryptographic standards. The application uses AES256 and TwoFish ciphers, and has SHA256 and SHA512 hashing standards.
+2. KeePassXC implements a strong and sufficiently random pseudo random number generator with the Botan library. 
+3. KeePassXC uses secure logging practices by never logging sensitive information. ;)
+4. KeePassXC has a buffer under-read vulnerability. While it is not used in critical points of the application, it could cause unintended behavior in the application.
+5. KeePassXC uses shared resources, and if the synchronization is not set properly, a race condition can present itself. This can cause unexpected behavior in the application or potential loss of availability.
+
+As far as encryption is concerned, KeePassXC fulfills its job as a password manager, providing strong and proper encryption for users on the database in use. With regards to vulnerabilities found during th code review, that remained relatively minimal. The buffer under-read vulnerability found was never executed during security critical times, and the most likely behavior stemming from it would be a crash. Lastly, the shared resources issue was never used during security critical points, only ever in the GUI, therefore being a convenience issue over a security issue.
+
+Overall, our findings for KeePassXC showed that it is a generally safe and stable codebase. From proper coding practices, to the relatively small amount of issues found, the application stands firm as a safe application to use for a password manager. While the few problems we found have little mitigation, they are not present in security functions, meaning the assurance is high and risk is low for any entity implementing this application. 
+
+
+### 6. OSS Contributions
+Given the continued work on this open source software assurance program, the following open sour project contributions and interactions are deemed to be noteworthy to KeePassXC. Reaffirmation and validation concerns regarding the hashing and encryption used by the application. The communication of findings discovered during the course of the project that is relevant to KeePassXC. The resolution of buffer under-reads that could lead to crashes and vulnerabilities. As well as a resolution to the race conditions in some parts of the code. KeePassXC is a safe and secure password manager that provides adequate security.
+
+### 7. Reflection
 Working with Josh, Aaron, Mitchell, Neil, and Danee has been a pleasure. Each member of the team has brought their own unique skills and perspectives to the table, resulting in a dynamic and productive work environment.
 
 Josh is a strong leader who is able to clearly articulate our team's goals and objectives, and he is adept at delegating tasks and responsibilities to ensure that we are all working towards the same end. His attention to detail and commitment to excellence are impressive, and he has been a valuable asset to our team.
